@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="Volume Calculator, digikey" />
+<meta name="description" content="Use volume and mass conversion calculator to convert milliliters to ounces, liters to gallons, and other units including pints, quarts, and gallons." />
+        
+<title>Volume and Mass Conversion Calculator</title>
+<style type="text/css">
+.rte-crumbs {
+    padding: 0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label,
+.input-answer,
+.input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight: bold;
+}
+.rtl .input-label,
+.rtl .input-answer,
+.rtl .input-dropdown {
+    position: absolute;
+    right: unset;
+    left: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+    font-weight: bold;
+}
+.input-dropdown {
+    padding: 5px;
+}
+.input-answer {
+    left: 0;
+    right: auto;
+    border-radius: 4px 0 0 4px;
+    width: 25px;
+}
+.rtl .input-answer {
+    left: auto;
+    right: 0;
+    border-radius: 0 4px 4px 0;
+}
+.calculator input {
+    border-radius: 4px;
+    border: solid 1px #999;
+    padding: 0px 5px 0px 5px;
+    max-width: 100%;
+    width: 100%;
+    box-shadow: none;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    height: 32px;
+}
+input.answer {
+    background-color: #F8F8F8
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left: 5px;
+    padding-right: 30px;
+}
+span.input-headline {
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin: 0 0 5px 0;
+}
+.rtl span.input-headline {
+    text-align: right;
+}
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height: 64px;
+    width: 64px;
+}
+#language-toggle {
+    padding: 25px 0 0 0;
+}
+.volume {
+    margin-right: 20px;
+}
+.rtl .volume {
+    margin-left: 20px;
+    margin-right: 0px;
+}
+.calculator {
+    display: flex;
+    flex-wrap: wrap;
+}
+.unit-title {
+    display: none;
+    overflow: hidden;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+.unit-title {
+display: block;
+}
+    .unit-title:before,
+    .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .rtl .unit-title:before,
+    .rtl .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 0px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .unit-title:before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+    .unit-title:after {
+        left: 0.5em;
+        margin-right: -50%;
+    }
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        
+        width: 100%;
+    }
+    .calculator input {
+        max-width: 100%;
+    }
+    .calculator-wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width: 100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear: both;
+    }
+    .rtl .related-products div {
+        text-align: right;
+    }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right: 10px;
+        height: 32px;
+        width: 32px;
+        margin-bottom: 10px;
+    }
+    .rtl .related-products div a img {
+        float: right;
+        margin-right: 0;
+        margin-left: 10px;
+    }
+    .volume {
+        margin-right: 0px;
+    }
+    .rtl .volume {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+    .calculator {
+        display: block;
+    }
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="css/global3683.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+        
+<div id="content">
+  <div class="layout-twocolumn">
+    <div class="content-column">
+      <div id="leftColumn">
+        <div class="richtextcontent" dir="ltr">
+
+<h1 class="headline-border">Volume and Mass Conversion Calculator</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">About:</h2>
+        <p>This conversion calculator quickly and easily converts volume and mass measurements like liters to gallons, milliliters to ounces, and other volume and mass measurement units including pints, quarts, ounces, cubic inches, cubic feet, cubic yards and cubic meters!</p>
+    </div>
+
+<div class="calculator">
+    <div class="volume">
+        <h2 class="unit-title">Metric Units</h2>
+        <div class="ml">
+            <span class="input-headline">Milliliters:</span>
+            <div class="calculator-input">
+                <span class="input-label">mL</span>
+                <input placeholder="Enter Milliliters..." name="ml" id="ml" type="number">
+            </div>
+        </div>
+        <div class="l">
+            <span class="input-headline">Liters:</span>
+            <div class="calculator-input">
+                <span class="input-label">L</span>
+                <input placeholder="Enter Liters..." name="l" id="l" type="number">
+            </div>
+        </div>
+        <div class="mm3">
+            <span class="input-headline">Cubic Millimeters:</span>
+            <div class="calculator-input">
+                <span class="input-label">mm<sup>3</sup></span>
+                <input placeholder="Enter Cubic Millimeters..." name="mm3" id="mm3" type="number">
+            </div>
+        </div>
+        <div class="cm3">
+            <span class="input-headline">Cubic Centimeters:</span>
+            <div class="calculator-input">
+                <span class="input-label">cm<sup>3</sup></span>
+                <input placeholder="Enter Cubic Centimeters..." name="cm3" id="cm3" type="number">
+            </div>
+        </div>
+        <div class="in3">
+            <span class="input-headline">Cubic Inches:</span>
+            <div class="calculator-input">
+                <span class="input-label">in<sup>3</sup></span>
+                <input placeholder="Enter Cubic Inches..." name="in3" id="in3" type="number">
+            </div>
+        </div>
+        <div class="ft3">
+            <span class="input-headline">Cubic Feet:</span>
+            <div class="calculator-input">
+                <span class="input-label">ft<sup>3</sup></span>
+                <input placeholder="Enter Cubic Feet..." name="ft3" id="ft3" type="number">
+            </div>
+        </div>
+        <div class="m3">
+            <span class="input-headline">Cubic Meters:</span>
+            <div class="calculator-input">
+                <span class="input-label">m<sup>3</sup></span>
+                <input placeholder="Enter Cubic Meters..." name="m3" id="m3" type="number">
+            </div>
+        </div>
+        <div class="yd3">
+            <span class="input-headline">Cubic Yards:</span>
+            <div class="calculator-input">
+                <span class="input-label">yd<sup>3</sup></span>
+                <input placeholder="Enter Cubic Yards..." name="yd3" id="yd3" type="number">
+            </div>
+        </div>
+    </div>
+    <div class="volume">
+        <h2 class="unit-title">US Customary Units</h2>
+        <div class="floz">
+            <span class="input-headline">US Fluid Ounces:</span>
+            <div class="calculator-input">
+                <span class="input-label">fl oz</span>
+                <input placeholder="Enter Fluid Ounces..." name="floz" id="floz" type="number">
+            </div>
+        </div>
+        <div class="pts">
+            <span class="input-headline">US Pints:</span>
+            <div class="calculator-input">
+                <span class="input-label">pt</span>
+                <input placeholder="Enter Pints..." name="pts" id="pts" type="number">
+            </div>
+        </div>
+        <div class="cup">
+            <span class="input-headline">US Cups:</span>
+            <div class="calculator-input">
+                <span class="input-label">cup</span>
+                <input placeholder="Enter Cups..." name="cup" id="cup" type="number">
+            </div>
+        </div>
+        <div class="qts">
+            <span class="input-headline">US Quarts:</span>
+            <div class="calculator-input">
+                <span class="input-label">qt</span>
+                <input placeholder="Enter Quarts..." name="qts" id="qts" type="number">
+            </div>
+        </div>
+        <div class="gal">
+            <span class="input-headline">US Gallons:</span>
+            <div class="calculator-input">
+                <span class="input-label">gal</span>
+                <input placeholder="Enter Gallons..." name="gal" id="gal" type="number">
+            </div>
+        </div>
+        <div class="tbsp">
+            <span class="input-headline">US Tablespoons:</span>
+            <div class="calculator-input">
+                <span class="input-label">tbsp</span>
+                <input placeholder="Enter Tablespoons..." name="tbsp" id="tbsp" type="number">
+            </div>
+        </div>
+        <div class="tsp">
+            <span class="input-headline">US Teaspoons:</span>
+            <div class="calculator-input">
+                <span class="input-label">tsp</span>
+                <input placeholder="Enter Teaspoons..." name="tsp" id="tsp" type="number">
+            </div>
+        </div>
+    </div>
+    <div class="volume">
+        <h2 class="unit-title">Imperial Units</h2>
+        <div class="ifloz">
+            <span class="input-headline">Imperial Fluid Ounces:</span>
+            <div class="calculator-input">
+                <span class="input-label">fl oz</span>
+                <input placeholder="Enter Fluid Ounces..." name="ifloz" id="ifloz" type="number">
+            </div>
+        </div>
+        <div class="ipts">
+            <span class="input-headline">Imperial Pints:</span>
+            <div class="calculator-input">
+                <span class="input-label">pt</span>
+                <input placeholder="Enter Pints..." name="ipts" id="ipts" type="number">
+            </div>
+        </div>
+        <div class="icup">
+            <span class="input-headline">Imperial Cups:</span>
+            <div class="calculator-input">
+                <span class="input-label">cup</span>
+                <input placeholder="Enter Cups..." name="icup" id="icup" type="number">
+            </div>
+        </div>
+        <div class="iqts">
+            <span class="input-headline">Imperial Quarts:</span>
+            <div class="calculator-input">
+                <span class="input-label">qt</span>
+                <input placeholder="Enter Quarts..." name="iqts" id="iqts" type="number">
+            </div>
+        </div>
+        <div class="igal">
+            <span class="input-headline">Imperial Gallons:</span>
+            <div class="calculator-input">
+                <span class="input-label">gal</span>
+                <input placeholder="Enter Gallons..." name="igal" id="igal" type="number">
+            </div>
+        </div>
+        <div class="itbsp">
+            <span class="input-headline">Imperial Tablespoons:</span>
+            <div class="calculator-input">
+                <span class="input-label">tbsp</span>
+                <input placeholder="Enter Tablespoons..." name="itbsp" id="itbsp" type="number">
+            </div>
+        </div>
+        <div class="itsp">
+            <span class="input-headline">Imperial Teaspoons:</span>
+            <div class="calculator-input">
+                <span class="input-label">tsp</span>
+                <input placeholder="Enter Teaspoons..." name="itsp" id="itsp" type="number">
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+<script type="text/javascript">var mlInput = document.getElementById("ml");
+var lInput = document.getElementById("l");
+var mm3Input = document.getElementById("mm3");
+var cm3Input = document.getElementById("cm3");
+var in3Input = document.getElementById("in3");
+var ft3Input = document.getElementById("ft3");
+var m3Input = document.getElementById("m3");
+var yd3Input = document.getElementById("yd3");
+var flozInput = document.getElementById("floz");
+var ptsInput = document.getElementById("pts");
+var cupInput = document.getElementById("cup");
+var qtsInput = document.getElementById("qts");
+var galInput = document.getElementById("gal");
+var tbspInput = document.getElementById("tbsp");
+var tspInput = document.getElementById("tsp");
+var iflozInput = document.getElementById("ifloz");
+var iptsInput = document.getElementById("ipts");
+var icupInput = document.getElementById("icup");
+var iqtsInput = document.getElementById("iqts");
+var igalInput = document.getElementById("igal");
+var itbspInput = document.getElementById("itbsp");
+var itspInput = document.getElementById("itsp");
+
+function mlConv() {
+    var mlI = document.getElementById("ml").value;
+    document.getElementById("l").value = parseFloat((mlI * 0.001).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((mlI * 1000).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((mlI * 1).toFixed(10));
+    document.getElementById("in3").value = parseFloat((mlI * 0.0610237).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((mlI * 3.5315e-5).toFixed(10));
+    document.getElementById("m3").value = parseFloat((mlI * 1e-6).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((mlI * 1.30795e-6).toFixed(10));
+    document.getElementById("floz").value = parseFloat((mlI * 0.033814).toFixed(10));
+    document.getElementById("pts").value = parseFloat((mlI * 0.00211338).toFixed(10));
+    document.getElementById("cup").value = parseFloat((mlI * 0.00422675).toFixed(10));
+    document.getElementById("qts").value = parseFloat((mlI * 0.00105669).toFixed(10));
+    document.getElementById("gal").value = parseFloat((mlI * 0.000264172).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((mlI * 0.067628).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((mlI * 0.202884).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((mlI * 0.0351951).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((mlI * 0.00175975).toFixed(10));
+    document.getElementById("icup").value = parseFloat((mlI * 0.00351951).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((mlI * 0.000879877).toFixed(10));
+    document.getElementById("igal").value = parseFloat((mlI * 0.000219969).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((mlI * 0.0563121).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((mlI * 0.168936).toFixed(10));
+}
+
+function lConv() {
+    var lI = document.getElementById("l").value;
+    document.getElementById("ml").value = parseFloat((lI * 1000).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((lI * 1000000).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((lI * 1000).toFixed(10));
+    document.getElementById("in3").value = parseFloat((lI * 61.0237).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((lI * 0.0353147).toFixed(10));
+    document.getElementById("m3").value = parseFloat((lI * .001).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((lI * 0.00130795).toFixed(10));
+    document.getElementById("floz").value = parseFloat((lI * 33.814).toFixed(10));
+    document.getElementById("pts").value = parseFloat((lI * 2.11338).toFixed(10));
+    document.getElementById("cup").value = parseFloat((lI * 4.22675).toFixed(10));
+    document.getElementById("qts").value = parseFloat((lI * 1.05669).toFixed(10));
+    document.getElementById("gal").value = parseFloat((lI * 0.264172).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((lI * 67.628).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((lI * 202.884).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((lI * 35.1951).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((lI * 1.75975).toFixed(10));
+    document.getElementById("icup").value = parseFloat((lI * 3.51951).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((lI * 0.879877).toFixed(10));
+    document.getElementById("igal").value = parseFloat((lI * 0.219969).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((lI * 56.3121).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((lI * 168.936).toFixed(10));
+}
+
+function mm3Conv() {
+    var mm3I = document.getElementById("mm3").value;
+    document.getElementById("ml").value = parseFloat((mm3I * 0.001).toFixed(10));
+    document.getElementById("l").value = parseFloat((mm3I * 1e-6).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((mm3I * 0.001).toFixed(10));
+    document.getElementById("in3").value = parseFloat((mm3I * 6.1024e-5).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((mm3I * 3.5315e-8).toFixed(10));
+    document.getElementById("m3").value = parseFloat((mm3I * 1e-9).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((mm3I * 1.30795e-9).toFixed(10));
+    document.getElementById("floz").value = parseFloat((mm3I * 3.3814e-5).toFixed(10));
+    document.getElementById("pts").value = parseFloat((mm3I * 2.1134e-6).toFixed(10));
+    document.getElementById("cup").value = parseFloat((mm3I * 4.22675e-6).toFixed(10));
+    document.getElementById("qts").value = parseFloat((mm3I * 1.0567e-6).toFixed(10));
+    document.getElementById("gal").value = parseFloat((mm3I * 2.6417e-7).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((mm3I * 6.7628e-5).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((mm3I * 0.000202884).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((mm3I * 3.5195e-5).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((mm3I * 1.7598e-6).toFixed(10));
+    document.getElementById("icup").value = parseFloat((mm3I * 3.5195e-6).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((mm3I * 8.7988e-7).toFixed(10));
+    document.getElementById("igal").value = parseFloat((mm3I * 2.1997e-7).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((mm3I * 5.6312e-5).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((mm3I * 0.000168936).toFixed(10));
+}
+
+function cm3Conv() {
+    var cm3I = document.getElementById("cm3").value;
+    document.getElementById("ml").value = parseFloat((cm3I * 1).toFixed(10));
+    document.getElementById("l").value = parseFloat((cm3I * 0.001).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((cm3I * 1000).toFixed(10));
+    document.getElementById("in3").value = parseFloat((cm3I * 0.0610237).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((cm3I * 3.5315e-5).toFixed(10));
+    document.getElementById("m3").value = parseFloat((cm3I * 1e-6).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((cm3I * 1.30795e-6).toFixed(10));
+    document.getElementById("floz").value = parseFloat((cm3I * 0.033814).toFixed(10));
+    document.getElementById("pts").value = parseFloat((cm3I * 0.00211338).toFixed(10));
+    document.getElementById("cup").value = parseFloat((cm3I * 0.00422675).toFixed(10));
+    document.getElementById("qts").value = parseFloat((cm3I * 0.00105669).toFixed(10));
+    document.getElementById("gal").value = parseFloat((cm3I * 0.000264172).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((cm3I * 0.067628).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((cm3I * 0.202884).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((cm3I * 0.0351951).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((cm3I * 0.175975).toFixed(10));
+    document.getElementById("icup").value = parseFloat((cm3I * 0.00351951).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((cm3I * 0.000879877).toFixed(10));
+    document.getElementById("igal").value = parseFloat((cm3I * 0.000219969).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((cm3I * 0.0563121).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((cm3I * 0.168936).toFixed(10));
+}
+
+function in3Conv() {
+    var in3I = document.getElementById("in3").value;
+    document.getElementById("ml").value = parseFloat((in3I * 16.3871).toFixed(10));
+    document.getElementById("l").value = parseFloat((in3I * 0.0163871).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((in3I * 16387.1).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((in3I * 16.3871).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((in3I * 0.000578704).toFixed(10));
+    document.getElementById("m3").value = parseFloat((in3I * 1.6387e-5).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((in3I * 2.14335e-5).toFixed(10));
+    document.getElementById("floz").value = parseFloat((in3I * 0.554113).toFixed(10));
+    document.getElementById("pts").value = parseFloat((in3I * 0.034632).toFixed(10));
+    document.getElementById("cup").value = parseFloat((in3I * 0.0692641).toFixed(10));
+    document.getElementById("qts").value = parseFloat((in3I * 0.017316).toFixed(10));
+    document.getElementById("gal").value = parseFloat((in3I * 0.004329).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((in3I * 1.10823).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((in3I * 3.32468).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((in3I * 0.576744).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((in3I * 0.0288372).toFixed(10));
+    document.getElementById("icup").value = parseFloat((in3I * 0.0576744).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((in3I * 0.0144186).toFixed(10));
+    document.getElementById("igal").value = parseFloat((in3I * 0.00360465).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((in3I * 0.92279).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((in3I * 2.76837).toFixed(10));
+}
+
+function ft3Conv() {
+    var ft3I = document.getElementById("ft3").value;
+    document.getElementById("ml").value = parseFloat((ft3I * 28316.8).toFixed(10));
+    document.getElementById("l").value = parseFloat((ft3I * 28.3168).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((ft3I * 2.832e+7).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((ft3I * 28316.8).toFixed(10));
+    document.getElementById("in3").value = parseFloat((ft3I * 1728).toFixed(10));
+    document.getElementById("m3").value = parseFloat((ft3I * 0.0283168).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((ft3I * 0.037037).toFixed(10));
+    document.getElementById("floz").value = parseFloat((ft3I * 957.506).toFixed(10));
+    document.getElementById("pts").value = parseFloat((ft3I * 59.8442).toFixed(10));
+    document.getElementById("cup").value = parseFloat((ft3I * 119.688).toFixed(10));
+    document.getElementById("qts").value = parseFloat((ft3I * 29.9221).toFixed(10));
+    document.getElementById("gal").value = parseFloat((ft3I * 7.48052).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((ft3I * 1915.01).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((ft3I * 5745.04).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((ft3I * 996.614).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((ft3I * 49.8307).toFixed(10));
+    document.getElementById("icup").value = parseFloat((ft3I * 99.6614).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((ft3I * 24.9153).toFixed(10));
+    document.getElementById("igal").value = parseFloat((ft3I * 6.22884).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((ft3I * 1594.58).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((ft3I * 4783.74).toFixed(10));
+}
+
+function m3Conv() {
+    var m3I = document.getElementById("m3").value;
+    document.getElementById("ml").value = parseFloat((m3I * 1e+6).toFixed(10));
+    document.getElementById("l").value = parseFloat((m3I * 1000).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((m3I * 1e+9).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((m3I * 1000000).toFixed(10));
+    document.getElementById("in3").value = parseFloat((m3I * 61023.7).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((m3I * 35.3147).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((m3I * 1.30795).toFixed(10));
+    document.getElementById("floz").value = parseFloat((m3I * 33814).toFixed(10));
+    document.getElementById("pts").value = parseFloat((m3I * 2113.38).toFixed(10));
+    document.getElementById("cup").value = parseFloat((m3I * 4226.75).toFixed(10));
+    document.getElementById("qts").value = parseFloat((m3I * 1056.69).toFixed(10));
+    document.getElementById("gal").value = parseFloat((m3I * 264.172).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((m3I * 67628).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((m3I * 202884).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((m3I * 35195.1).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((m3I * 1759.75).toFixed(10));
+    document.getElementById("icup").value = parseFloat((m3I * 3519.51).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((m3I * 879.877).toFixed(10));
+    document.getElementById("igal").value = parseFloat((m3I * 219.969).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((m3I * 56312.1).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((m3I * 168936).toFixed(10));
+}
+
+function yd3Conv() {
+    var yd3I = document.getElementById("yd3").value;
+    document.getElementById("ml").value = parseFloat((yd3I * 764555).toFixed(10));
+    document.getElementById("l").value = parseFloat((yd3I * 764.555).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((yd3I * 7.646e+8).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((yd3I * 764555).toFixed(10));
+    document.getElementById("in3").value = parseFloat((yd3I * 46656).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((yd3I * 27).toFixed(10));
+    document.getElementById("m3").value = parseFloat((yd3I * 0.764555).toFixed(10));
+    document.getElementById("floz").value = parseFloat((yd3I * 25852.7).toFixed(10));
+    document.getElementById("pts").value = parseFloat((yd3I * 1615.79).toFixed(10));
+    document.getElementById("cup").value = parseFloat((yd3I * 3231.58).toFixed(10));
+    document.getElementById("qts").value = parseFloat((yd3I * 807.896).toFixed(10));
+    document.getElementById("gal").value = parseFloat((yd3I * 201.974).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((yd3I * 51705.4).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((yd3I * 155116).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((yd3I * 26908.6).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((yd3I * 1345.43).toFixed(10));
+    document.getElementById("icup").value = parseFloat((yd3I * 2690.86).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((yd3I * 672.714).toFixed(10));
+    document.getElementById("igal").value = parseFloat((yd3I * 168.179).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((yd3I * 43053.7).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((yd3I * 129161).toFixed(10));
+}
+
+function flozConv() {
+    var flozI = document.getElementById("floz").value;
+    document.getElementById("ml").value = parseFloat((flozI * 29.5735).toFixed(10));
+    document.getElementById("l").value = parseFloat((flozI * 0.0295735).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((flozI * 29573.5).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((flozI * 29.5735).toFixed(10));
+    document.getElementById("in3").value = parseFloat((flozI * 1.80469).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((flozI * 0.00104438).toFixed(10));
+    document.getElementById("m3").value = parseFloat((flozI * 2.95735e-5).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((flozI * 3.86807e-5).toFixed(10));
+    document.getElementById("pts").value = parseFloat((flozI * 0.0625).toFixed(10));
+    document.getElementById("cup").value = parseFloat((flozI * 0.125).toFixed(10));
+    document.getElementById("qts").value = parseFloat((flozI * 0.03125).toFixed(10));
+    document.getElementById("gal").value = parseFloat((flozI * 0.0078125).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((flozI * 2).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((flozI * 6).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((flozI * 1.04084).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((flozI * 0.0520421).toFixed(10));
+    document.getElementById("icup").value = parseFloat((flozI * 0.104084).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((flozI * 0.0260211).toFixed(10));
+    document.getElementById("igal").value = parseFloat((flozI * 0.00650527).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((flozI * 1.66535).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((flozI * 4.99604).toFixed(10));
+}
+
+function ptsConv() {
+    var ptsI = document.getElementById("pts").value;
+    document.getElementById("ml").value = parseFloat((ptsI * 473.176).toFixed(10));
+    document.getElementById("l").value = parseFloat((ptsI * 0.473176).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((ptsI * 473176).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((ptsI * 473.176).toFixed(10));
+    document.getElementById("in3").value = parseFloat((ptsI * 28.875).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((ptsI * 0.0167101).toFixed(10));
+    document.getElementById("m3").value = parseFloat((ptsI * 0.000473176).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((ptsI * 0.000618891).toFixed(10));
+    document.getElementById("floz").value = parseFloat((ptsI * 16).toFixed(10));
+    document.getElementById("cup").value = parseFloat((ptsI * 2).toFixed(10));
+    document.getElementById("qts").value = parseFloat((ptsI * 0.5).toFixed(10));
+    document.getElementById("gal").value = parseFloat((ptsI * 0.125).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((ptsI * 32).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((ptsI * 96).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((ptsI * 16.6535).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((ptsI * 0.832674).toFixed(10));
+    document.getElementById("icup").value = parseFloat((ptsI * 1.66535).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((ptsI * 0.416337).toFixed(10));
+    document.getElementById("igal").value = parseFloat((ptsI * 0.104084).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((ptsI * 26.6456).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((ptsI * 79.9367).toFixed(10));
+}
+
+function cupConv() {
+    var cupI = document.getElementById("cup").value;
+    document.getElementById("ml").value = parseFloat((cupI * 236.588).toFixed(10));
+    document.getElementById("l").value = parseFloat((cupI * 0.236588).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((cupI * 236588).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((cupI * 236.588).toFixed(10));
+    document.getElementById("in3").value = parseFloat((cupI * 14.4375).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((cupI * 0.00835503).toFixed(10));
+    document.getElementById("m3").value = parseFloat((cupI * 0.000236588).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((cupI * 0.000309446).toFixed(10));
+    document.getElementById("floz").value = parseFloat((cupI * 8).toFixed(10));
+    document.getElementById("pts").value = parseFloat((cupI * 0.5).toFixed(10));
+    document.getElementById("qts").value = parseFloat((cupI * 0.25).toFixed(10));
+    document.getElementById("gal").value = parseFloat((cupI * 0.0625).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((cupI * 16).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((cupI * 48).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((cupI * 8.32674).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((cupI * 0.416337).toFixed(10));
+    document.getElementById("icup").value = parseFloat((cupI * 0.832674).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((cupI * 0.208169).toFixed(10));
+    document.getElementById("igal").value = parseFloat((cupI * .0520421).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((cupI * 13.3228).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((cupI * 39.9683).toFixed(10));
+}
+
+function qtsConv() {
+    var qtsI = document.getElementById("qts").value;
+    document.getElementById("ml").value = parseFloat((qtsI * 946.353).toFixed(10));
+    document.getElementById("l").value = parseFloat((qtsI * 0.946353).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((qtsI * 946353).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((qtsI * 946.353).toFixed(10));
+    document.getElementById("in3").value = parseFloat((qtsI * 57.75).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((qtsI * 0.0334201).toFixed(10));
+    document.getElementById("m3").value = parseFloat((qtsI * 0.000946353).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((qtsI * 0.00123778).toFixed(10));
+    document.getElementById("floz").value = parseFloat((qtsI * 32).toFixed(10));
+    document.getElementById("pts").value = parseFloat((qtsI * 2).toFixed(10));
+    document.getElementById("cup").value = parseFloat((qtsI * 4).toFixed(10));
+    document.getElementById("gal").value = parseFloat((qtsI * 0.25).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((qtsI * 64).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((qtsI * 192).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((qtsI * 33.307).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((qtsI * 1.66535).toFixed(10));
+    document.getElementById("icup").value = parseFloat((qtsI * 3.3307).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((qtsI * 0.832674).toFixed(10));
+    document.getElementById("igal").value = parseFloat((qtsI * 0.208169).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((qtsI * 53.2911).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((qtsI * 159.873).toFixed(10));
+}
+
+function galConv() {
+    var galI = document.getElementById("gal").value;
+    document.getElementById("ml").value = parseFloat((galI * 3785.41).toFixed(10));
+    document.getElementById("l").value = parseFloat((galI * 3.78541).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((galI * 3.785e+6).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((galI * 3785.41).toFixed(10));
+    document.getElementById("in3").value = parseFloat((galI * 231).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((galI * 0.133681).toFixed(10));
+    document.getElementById("m3").value = parseFloat((galI * 0.00378541).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((galI * 0.00495113).toFixed(10));
+    document.getElementById("floz").value = parseFloat((galI * 128).toFixed(10));
+    document.getElementById("pts").value = parseFloat((galI * 8).toFixed(10));
+    document.getElementById("cup").value = parseFloat((galI * 16).toFixed(10));
+    document.getElementById("qts").value = parseFloat((galI * 4).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((galI * 256).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((galI * 768).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((galI * 133.228).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((galI * 6.66139).toFixed(10));
+    document.getElementById("icup").value = parseFloat((galI * 13.3228).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((galI * 3.3307).toFixed(10));
+    document.getElementById("igal").value = parseFloat((galI * 0.832674).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((galI * 213.165).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((galI * 639.494).toFixed(10));
+}
+
+function tbspConv() {
+    var tbspI = document.getElementById("tbsp").value;
+    document.getElementById("ml").value = parseFloat((tbspI * 14.7868).toFixed(10));
+    document.getElementById("l").value = parseFloat((tbspI * 0.0147868).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((tbspI * 14786.8).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((tbspI * 14.7868).toFixed(10));
+    document.getElementById("in3").value = parseFloat((tbspI * 0.902344).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((tbspI * 0.00052219).toFixed(10));
+    document.getElementById("m3").value = parseFloat((tbspI * 1.47868e-5).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((tbspI * 1.93404e-5).toFixed(10));
+    document.getElementById("floz").value = parseFloat((tbspI * .5).toFixed(10));
+    document.getElementById("pts").value = parseFloat((tbspI * 0.03125).toFixed(10));
+    document.getElementById("cup").value = parseFloat((tbspI * 0.0625).toFixed(10));
+    document.getElementById("qts").value = parseFloat((tbspI * 0.015625).toFixed(10));
+    document.getElementById("gal").value = parseFloat((tbspI * 0.00390625).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((tbspI * 3).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((tbspI * 0.520421).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((tbspI * 0.0260211).toFixed(10));
+    document.getElementById("icup").value = parseFloat((tbspI * 0.0520421).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((tbspI * 0.0130105).toFixed(10));
+    document.getElementById("igal").value = parseFloat((tbspI * 0.00325263).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((tbspI * 0.832674).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((tbspI * 2.49802).toFixed(10));
+}
+
+function tspConv() {
+    var tspI = document.getElementById("tsp").value;
+    document.getElementById("ml").value = parseFloat((tspI * 4.92892).toFixed(10));
+    document.getElementById("l").value = parseFloat((tspI * 0.00492892).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((tspI * 4928.92).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((tspI * 4.92892).toFixed(10));
+    document.getElementById("in3").value = parseFloat((tspI * 0.300781).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((tspI * 0.000174063).toFixed(10));
+    document.getElementById("m3").value = parseFloat((tspI * 4.92892e-6).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((tspI * 6.44678e-6).toFixed(10));
+    document.getElementById("floz").value = parseFloat((tspI * 0.166667).toFixed(10));
+    document.getElementById("pts").value = parseFloat((tspI * 0.0104167).toFixed(10));
+    document.getElementById("cup").value = parseFloat((tspI * 0.0208333).toFixed(10));
+    document.getElementById("qts").value = parseFloat((tspI * 0.00520833).toFixed(10));
+    document.getElementById("gal").value = parseFloat((tspI * 0.00130208).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((tspI * 0.333333).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((tspI * 0.173474).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((tspI * 0.00867369).toFixed(10));
+    document.getElementById("icup").value = parseFloat((tspI * 0.0173474).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((tspI * 0.00433684).toFixed(10));
+    document.getElementById("igal").value = parseFloat((tspI * 0.00108421).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((tspI * 0.277558).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((tspI * 0.832674).toFixed(10));
+}
+
+function iflozConv() {
+    var iflozI = document.getElementById("ifloz").value;
+    document.getElementById("ml").value = parseFloat((iflozI * 28.4131).toFixed(10));
+    document.getElementById("l").value = parseFloat((iflozI * 0.0284131).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((iflozI * 28413.1).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((iflozI * 28.4131).toFixed(10));
+    document.getElementById("in3").value = parseFloat((iflozI * 1.73387).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((iflozI * 0.0010034).toFixed(10));
+    document.getElementById("m3").value = parseFloat((iflozI * 2.84131e-5).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((iflozI * 3.71629e-5).toFixed(10));
+    document.getElementById("floz").value = parseFloat((iflozI * 0.96076).toFixed(10));
+    document.getElementById("pts").value = parseFloat((iflozI * 0.0600475).toFixed(10));
+    document.getElementById("cup").value = parseFloat((iflozI * 0.120095).toFixed(10));
+    document.getElementById("qts").value = parseFloat((iflozI * 0.0300237).toFixed(10));
+    document.getElementById("gal").value = parseFloat((iflozI * 0.00750594).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((iflozI * 1.92152).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((iflozI * 5.76456).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((iflozI * 0.05).toFixed(10));
+    document.getElementById("icup").value = parseFloat((iflozI * 0.1).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((iflozI * 0.025).toFixed(10));
+    document.getElementById("igal").value = parseFloat((iflozI * 0.00625).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((iflozI * 1.6).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((iflozI * 4.8).toFixed(10));
+}
+
+function iptsConv() {
+    var iptsI = document.getElementById("ipts").value;
+    document.getElementById("ml").value = parseFloat((iptsI * 568.261).toFixed(10));
+    document.getElementById("l").value = parseFloat((iptsI * 0.568261).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((iptsI * 568261).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((iptsI * 568.261).toFixed(10));
+    document.getElementById("in3").value = parseFloat((iptsI * 34.6774).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((iptsI * 0.020068).toFixed(10));
+    document.getElementById("m3").value = parseFloat((iptsI * 0.000568261).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((iptsI * 0.000743258).toFixed(10));
+    document.getElementById("floz").value = parseFloat((iptsI * 19.2152).toFixed(10));
+    document.getElementById("pts").value = parseFloat((iptsI * 1.20095).toFixed(10));
+    document.getElementById("cup").value = parseFloat((iptsI * 2.4019).toFixed(10));
+    document.getElementById("qts").value = parseFloat((iptsI * 0.600475).toFixed(10));
+    document.getElementById("gal").value = parseFloat((iptsI * 0.150119).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((iptsI * 38.4304).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((iptsI * 115.291).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((iptsI * 20).toFixed(10));
+    document.getElementById("icup").value = parseFloat((iptsI * 2).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((iptsI * 0.5).toFixed(10));
+    document.getElementById("igal").value = parseFloat((iptsI * 0.125).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((iptsI * 32).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((iptsI * 96).toFixed(10));
+}
+
+function icupConv() {
+    var icupI = document.getElementById("icup").value;
+    document.getElementById("ml").value = parseFloat((icupI * 284.131).toFixed(10));
+    document.getElementById("l").value = parseFloat((icupI * 0.284131).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((icupI * 284131).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((icupI * 284.131).toFixed(10));
+    document.getElementById("in3").value = parseFloat((icupI * 17.3387).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((icupI * 0.010034).toFixed(10));
+    document.getElementById("m3").value = parseFloat((icupI * 0.000284131).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((icupI * 0.000371629).toFixed(10));
+    document.getElementById("floz").value = parseFloat((icupI * 9.6076).toFixed(10));
+    document.getElementById("pts").value = parseFloat((icupI * 0.600475).toFixed(10));
+    document.getElementById("cup").value = parseFloat((icupI * 1.20095).toFixed(10));
+    document.getElementById("qts").value = parseFloat((icupI * 0.300237).toFixed(10));
+    document.getElementById("gal").value = parseFloat((icupI * 0.0750594).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((icupI * 19.2152).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((icupI * 57.6456).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((icupI * 10).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((icupI * 0.5).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((icupI * 0.25).toFixed(10));
+    document.getElementById("igal").value = parseFloat((icupI * 0.625).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((icupI * 16).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((icupI * 48).toFixed(10));
+}
+
+function iqtsConv() {
+    var iqtsI = document.getElementById("iqts").value;
+    document.getElementById("ml").value = parseFloat((iqtsI * 1136.52).toFixed(10));
+    document.getElementById("l").value = parseFloat((iqtsI * 1.13652).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((iqtsI * 1.137e+6).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((iqtsI * 1136.52).toFixed(10));
+    document.getElementById("in3").value = parseFloat((iqtsI * 69.3549).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((iqtsI * 0.0401359).toFixed(10));
+    document.getElementById("m3").value = parseFloat((iqtsI * 0.00113652).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((iqtsI * 0.00148652).toFixed(10));
+    document.getElementById("floz").value = parseFloat((iqtsI * 38.4304).toFixed(10));
+    document.getElementById("pts").value = parseFloat((iqtsI * 2.4019).toFixed(10));
+    document.getElementById("cup").value = parseFloat((iqtsI * 4.8038).toFixed(10));
+    document.getElementById("qts").value = parseFloat((iqtsI * 1.20095).toFixed(10));
+    document.getElementById("gal").value = parseFloat((iqtsI * 0.300237).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((iqtsI * 76.8608).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((iqtsI * 230.582).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((iqtsI * 40).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((iqtsI * 2).toFixed(10));
+    document.getElementById("icup").value = parseFloat((iqtsI * 4).toFixed(10));
+    document.getElementById("igal").value = parseFloat((iqtsI * 0.25).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((iqtsI * 64).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((iqtsI * 192).toFixed(10));
+}
+
+function igalConv() {
+    var igalI = document.getElementById("igal").value;
+    document.getElementById("ml").value = parseFloat((igalI * 4546.09).toFixed(10));
+    document.getElementById("l").value = parseFloat((igalI * 4.54609).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((igalI * 4.546e+6).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((igalI * 4546.09).toFixed(10));
+    document.getElementById("in3").value = parseFloat((igalI * 277.419).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((igalI * 0.160544).toFixed(10));
+    document.getElementById("m3").value = parseFloat((igalI * 0.00454609).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((igalI * 0.00594606).toFixed(10));
+    document.getElementById("floz").value = parseFloat((igalI * 153.722).toFixed(10));
+    document.getElementById("pts").value = parseFloat((igalI * 9.6076).toFixed(10));
+    document.getElementById("cup").value = parseFloat((igalI * 19.2152).toFixed(10));
+    document.getElementById("qts").value = parseFloat((igalI * 4.8038).toFixed(10));
+    document.getElementById("gal").value = parseFloat((igalI * 1.20095).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((igalI * 307.443).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((igalI * 922.33).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((igalI * 160).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((igalI * 8).toFixed(10));
+    document.getElementById("icup").value = parseFloat((igalI * 16).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((igalI * 4).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((igalI * 256).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((igalI * 768).toFixed(10));
+}
+
+function itbspConv() {
+    var itbspI = document.getElementById("itbsp").value;
+    document.getElementById("ml").value = parseFloat((itbspI * 17.7582).toFixed(10));
+    document.getElementById("l").value = parseFloat((itbspI * 0.0177582).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((itbspI * 17758.2).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((itbspI * 17.7582).toFixed(10));
+    document.getElementById("in3").value = parseFloat((itbspI * 1.08367).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((itbspI * 0.000627124).toFixed(10));
+    document.getElementById("m3").value = parseFloat((itbspI * 1.77582e-5).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((itbspI * 2.32268e-5).toFixed(10));
+    document.getElementById("floz").value = parseFloat((itbspI * 0.600475).toFixed(10));
+    document.getElementById("pts").value = parseFloat((itbspI * 0.0375297).toFixed(10));
+    document.getElementById("cup").value = parseFloat((itbspI * 0.0750594).toFixed(10));
+    document.getElementById("qts").value = parseFloat((itbspI * 0.0187649).toFixed(10));
+    document.getElementById("gal").value = parseFloat((itbspI * 0.00469121).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((itbspI * 1.20095).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((itbspI * 3.60285).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((itbspI * 0.625).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((itbspI * 0.03125).toFixed(10));
+    document.getElementById("icup").value = parseFloat((itbspI * 0.0625).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((itbspI * 0.015625).toFixed(10));
+    document.getElementById("igal").value = parseFloat((itbspI * 0.00390625).toFixed(10));
+    document.getElementById("itsp").value = parseFloat((itbspI * 3).toFixed(10));
+}
+
+function itspConv() {
+    var itspI = document.getElementById("itsp").value;
+    document.getElementById("ml").value = parseFloat((itspI * 5.91939).toFixed(10));
+    document.getElementById("l").value = parseFloat((itspI * 0.00591939).toFixed(10));
+    document.getElementById("mm3").value = parseFloat((itspI * 5919.39).toFixed(10));
+    document.getElementById("cm3").value = parseFloat((itspI * 5.91939).toFixed(10));
+    document.getElementById("in3").value = parseFloat((itspI * 0.361223).toFixed(10));
+    document.getElementById("ft3").value = parseFloat((itspI * 0.000209041).toFixed(10));
+    document.getElementById("m3").value = parseFloat((itspI * 5.91939e-6).toFixed(10));
+    document.getElementById("yd3").value = parseFloat((itspI * 7.74227e-6).toFixed(10));
+    document.getElementById("floz").value = parseFloat((itspI * 0.200158).toFixed(10));
+    document.getElementById("pts").value = parseFloat((itspI * 0.0125099).toFixed(10));
+    document.getElementById("cup").value = parseFloat((itspI * 0.0250198).toFixed(10));
+    document.getElementById("qts").value = parseFloat((itspI * 0.00625495).toFixed(10));
+    document.getElementById("gal").value = parseFloat((itspI * 0.00156374).toFixed(10));
+    document.getElementById("tbsp").value = parseFloat((itspI * 0.400317).toFixed(10));
+    document.getElementById("tsp").value = parseFloat((itspI * 1.20095).toFixed(10));
+    document.getElementById("ifloz").value = parseFloat((itspI * 0.208333).toFixed(10));
+    document.getElementById("ipts").value = parseFloat((itspI * 0.0104167).toFixed(10));
+    document.getElementById("icup").value = parseFloat((itspI * 0.0208333).toFixed(10));
+    document.getElementById("iqts").value = parseFloat((itspI * 0.00520834).toFixed(10));
+    document.getElementById("igal").value = parseFloat((itspI * 0.00130208).toFixed(10));
+    document.getElementById("itbsp").value = parseFloat((itspI * 0.333333).toFixed(10));
+}
+
+mlInput.addEventListener("keyup", mlConv);
+lInput.addEventListener("keyup", lConv);
+mm3Input.addEventListener("keyup", mm3Conv);
+cm3Input.addEventListener("keyup", cm3Conv);
+in3Input.addEventListener("keyup", in3Conv);
+ft3Input.addEventListener("keyup", ft3Conv);
+m3Input.addEventListener("keyup", m3Conv);
+yd3Input.addEventListener("keyup", yd3Conv);
+flozInput.addEventListener("keyup", flozConv);
+ptsInput.addEventListener("keyup", ptsConv);
+cupInput.addEventListener("keyup", cupConv);
+qtsInput.addEventListener("keyup", qtsConv);
+galInput.addEventListener("keyup", galConv);
+tbspInput.addEventListener("keyup", tbspConv);
+tspInput.addEventListener("keyup", tspConv);
+iflozInput.addEventListener("keyup", iflozConv);
+iptsInput.addEventListener("keyup", iptsConv);
+icupInput.addEventListener("keyup", icupConv);
+iqtsInput.addEventListener("keyup", iqtsConv);
+igalInput.addEventListener("keyup", igalConv);
+itbspInput.addEventListener("keyup", itbspConv);
+itspInput.addEventListener("keyup", itspConv);
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+</body>
+</html>
+
