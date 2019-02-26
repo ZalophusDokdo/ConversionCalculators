@@ -270,8 +270,8 @@ document.addEventListener("DOMContentLoaded", function(){
         <script type="text/javascript">
             $(function(){
                 jQuery('#siteNavigation').load('navigation.html', function(){
-                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
-                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+		            jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+		            setTimeout(function(){$("li.conversion").addClass('active'); $('li.conversion li:eq(5)').addClass('active');}, 100);
                 });
             });
             
