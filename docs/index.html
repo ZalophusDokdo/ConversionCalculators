@@ -128,7 +128,7 @@
             $(function(){
                 jQuery('#siteNavigation').load('navigation-en.html', function(){
                     jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
-                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+                    setTimeout(function(){$("ul.navbar-right li:eq(0)").addClass('active');}, 100);
                 });
             });
             
