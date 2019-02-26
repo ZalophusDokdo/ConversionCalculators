@@ -1,24 +1,11 @@
 @charset "utf-8";
 /* CSS Document */
-/* MOVED INTO THE FONT.CSS FILE
-@font-face {
-  font-family: 'dk';
-  src:  url('/-/media/designer/global/fonts/dk.eot?jeznaw');
-  src:  url('/-/media/designer/global/fonts/dk.eot?jeznaw#iefix') format('embedded-opentype'),
-    url('/-/media/designer/global/fonts/dk.ttf?jeznaw') format('truetype'),
-    url('/-/media/designer/global/fonts/dk.woff?jeznaw') format('woff'),
-    url('/-/media/designer/global/fonts/dk.svg?jeznaw#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-*/
 
 html, body {
     margin: 0;
     padding: 0;
     width: 100%;
     font-family: Arial,Helvetica,sans-serif,'dk';
-    font-size: 12px;
 }
 
 body {
@@ -33,15 +20,15 @@ body {
 
 /* Global Style Classes */
 h1 {
-  font-size:18px;
+
 }
 
 h2 {
-  font-size:14px;
+
 }
 
 h3, h4, h5, h6 {
-  font-size:12px;
+
 }
 
 .headline-border {
@@ -65,7 +52,6 @@ sub {
 
 .clear {
   height: 0px;
-  font-size: 1px;
   margin: 0px;
   padding: 0px;
   line-height: 0px;
@@ -114,7 +100,6 @@ blockquote {
 .sublogo__text,
 .sublogo__text a {
   font-weight:bold;
-  font-size:16px;
   color: #000;
   text-decoration: none;
 }  
@@ -127,7 +112,6 @@ blockquote {
 /* Breadcrumb */
 .breadcrumbs {
   max-width:1160px;
-  font-size: 10px;
   color:#666666;
   padding: 5px 20px 0px 20px;
   margin:0 auto;
@@ -299,14 +283,12 @@ blockquote {
 .product-table__title {
 	color:#555555; 
 	font-weight:bold; 
-	font-size:14px; 
 	padding:5px; 
 }
 
 .product-table__title h3 {
   padding:0px;
   margin:0px;
-  font-size:14px;
 }
 
 .product-table__table,
@@ -449,7 +431,6 @@ img[src*="help.png"] {
   display: table-caption; 
   caption-side: bottom;
   text-align: center;
-  font-size:12px;
   line-height:normal;
   padding-bottom:10px; 
 }

@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="Pressure Conversion Calculator" />
+<meta name="description" content="Convert psi to bar, kg/cm2 to psi, bar to kg/cm2, and other units like pa, mmH2O, inches H2O, psf and atmosphere with pressure measurement conversion calculator." />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>Pressure Conversion Calculator</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label, .input-answer, .input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+.rtl .input-label, .input-answer, .input-dropdown {
+    position: absolute;
+    left: 0;
+    right: unset;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+    .rtl .input-label {
+        border-radius: 4px 0 0 4px;
+    }
+.input-dropdown {
+    padding:5px;
+}
+.input-answer {
+    left: 0;
+    right:auto;
+    border-radius: 4px 0 0 4px;
+    width:25px;
+}
+    .rtl .input-answer {
+        left: auto;
+        right:0;
+        border-radius: 0 4px 4px 0;
+    }
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding-left:5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+.rtl .calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding-right:5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+input.answer {
+    background-color:#F8F8F8 
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left:5px;
+    padding-right:30px;
+}
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+  .rtl span.input-headline {
+    text-align: right;
+  }
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height:64px;
+    width:64px;
+}
+#language-toggle {
+    padding:25px 0 0 0;
+}
+.calculator {
+display: flex;
+flex-wrap: wrap;
+}
+.pressure { margin-right: 20px; }
+.rtl pressure {margin-left: 20px; margin-right: 0px;}
+
+@media screen and (max-width: 600px) {
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        width:100%;
+    }
+    .calculator input {
+        max-width:100%;
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width:100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear:both;
+    }
+        .rtl .related-products div {
+            text-align: right;
+        }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right:10px;
+        height:32px;
+        width:32px;
+        margin-bottom:10px;
+    }
+        .rtl .related-products div a img {
+            float: right;
+            margin-right:0;
+            margin-left:10px;
+        }
+.calculator {
+display: block;
+}
+.pressure { margin-right: 0px; }
+.rtl pressure {margin-left: 0px; margin-right: 0px;}
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/global3683.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">Pressure Conversion Calculator</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">About:</h2>
+        <p>Convert pressure measurements including psi to bar, kg/cm<sup>2</sup> to psi, bar to kg/cm<sup>2</sup>, and other pressure conversions including pa, bar, kg/cm<sup>2</sup>, psi, mm H<sub>2</sub>O, in H<sub>2</sub>O, psf and atmosphere by using DigiKey's pressure conversion calculator.</p>
+    </div>
+
+
+<div class="calculator">
+<div class="pressure">
+        <div class="pa">
+            <span class="input-headline">Pascal:</span>
+            <div class="calculator-input">
+                <span class="input-label">Pa (N/m<sup>2</sup>)</span>
+                <input placeholder="Enter Value..." name="pa" id="pa" type="number">
+            </div>
+        </div>
+        <div class="bar">
+            <span class="input-headline">Bar:</span>
+            <div class="calculator-input">
+                <span class="input-label">Bar</span>
+                <input placeholder="Enter Value..." name="bar" id="bar" type="number">
+            </div>
+        </div>
+        <div class="kgcm">
+            <span class="input-headline">Kilogram per Square Centimeter:</span>
+            <div class="calculator-input">
+                <span class="input-label">kg/cm<sup>2</sup></span>
+                <input placeholder="Enter Value..." name="kgcm" id="kgcm" type="number">
+            </div>
+        </div>
+        <div class="psi">
+            <span class="input-headline">Pound per Square Inch:</span>
+            <div class="calculator-input">
+                <span class="input-label">psi</span>
+                <input placeholder="Enter Value..." name="psi" id="psi" type="number">
+            </div>
+        </div></div>
+<div class="pressure">
+        <div class="psf">
+            <span class="input-headline">Pound per Square Foot:</span>
+            <div class="calculator-input">
+                <span class="input-label">psf</span>
+                <input placeholder="Enter Value..." name="psf" id="psf" type="number">
+            </div>
+        </div>
+        <div class="mmh2o">
+            <span class="input-headline">Millimeters of Water Column at 4°C:</span>
+            <div class="calculator-input">
+                <span class="input-label">mm H<sub>2</sub>O</span>
+                <input placeholder="Enter Value..." name="mmh2o" id="mmh2o" type="number">
+            </div>
+        </div>
+        <div class="inh2o">
+            <span class="input-headline">Inches of Water Column at 4°C:</span>
+            <div class="calculator-input">
+                <span class="input-label">in H<sub>2</sub>O</span>
+                <input placeholder="Enter Value..." name="inh2o" id="inh2o" type="number">
+            </div>
+        </div>
+        <div class="atm">
+            <span class="input-headline">Atmospheric Pressure:</span>
+            <div class="calculator-input">
+                <span class="input-label">atm</span>
+                <input placeholder="Enter Value..." name="atm" id="atm" type="number">
+            </div>
+        </div></div>
+</div>
+</div>
+<div class="calculator-wrapper">
+<ul>
+<li>A <strong>Pascal (Pa N/m<sup>2</sup>)</strong> is a unit of pressure equivalent to one newton per square meter.</li>
+<li>A <strong>Bar</strong> is equal to 100000 Pa and is slightly less than the average atmospheric pressure on Earth at sea level.</li>
+<li><strong>Kilogram per square centimeter (kg/cm<sup>2</sup>)</strong> is a pressure measure equal to one kilogram-force per square centimeter, another name for this unit is technical atmosphere.</li>
+<li><strong>Pound per square inch (psi)</strong> is the result from a force of one pound-force applied to an area of one square inch.</li>
+<li><strong>Pound per square foot (psf)</strong> is the result from a force of one pound-force applied to an area of one square foot.</li>
+<li><strong>Millimeters of water column at 4 degrees Celsius (mm H<sub>2</sub>O @ 4°C)</strong> is defined as the pressure exerted by a column of water 1 mm high, at 4&deg;C, at the standard acceleration of gravity.</li>
+<li><strong>Inches of water column at 4 degrees Celsius (in H<sub>2</sub>O @ 4°C)</strong> is defined as the pressure exerted by a column of water 1 inch in height, at 4&deg;C, at the standard acceleration of gravity.</li>
+<li><strong>Atmospheric pressure</strong> also called barometric pressure, is the pressure within the atmosphere of Earth.</li>
+</ul>
+</div>
+        
+<script type="text/javascript">
+var paInput = document.getElementById("pa");
+var barInput = document.getElementById("bar");
+var kgcmInput = document.getElementById("kgcm");
+var psiInput = document.getElementById("psi");
+var psfInput = document.getElementById("psf");
+var mmh2oInput = document.getElementById("mmh2o");
+var inh2oInput = document.getElementById("inh2o");
+var mmhgInput = document.getElementById("mmhg");
+var inhgInput = document.getElementById("inhg");
+var atmInput = document.getElementById("atm");
+
+function paConv() {
+	var paI = document.getElementById("pa").value;
+	document.getElementById("bar").value = parseFloat((paI * .00001).toFixed(10));
+	document.getElementById("kgcm").value = parseFloat((paI * .0000101971621).toFixed(10));
+    document.getElementById("psi").value = parseFloat((paI * .000145037738).toFixed(10));
+    document.getElementById("psf").value = parseFloat((paI * .0208854).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((paI * .101971621).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((paI * .00401463076).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((paI * .00750061576).toFixed(10));
+	document.getElementById("inhg").value = parseFloat((paI * .000295299833).toFixed(10));
+	document.getElementById("atm").value = parseFloat((paI * .00000986923267).toFixed(10));
+}
+function barConv() {
+	var barI = document.getElementById("bar").value;
+	document.getElementById("pa").value = parseFloat((barI * 1e+5).toFixed(10));
+	document.getElementById("kgcm").value = parseFloat((barI * 1.01971621).toFixed(10));
+    document.getElementById("psi").value = parseFloat((barI * 14.5037738).toFixed(10));
+    document.getElementById("psf").value = parseFloat((barI * 2088.54342).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((barI * 10197.1621).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((barI * 401.463076).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((barI * 750.061576).toFixed(10));
+	document.getElementById("inhg").value = parseFloat((barI * 29.5299833).toFixed(10));
+	document.getElementById("atm").value = parseFloat((barI * 0.986923267).toFixed(10));
+}
+function kgcmConv() {
+	var kgcmI = document.getElementById("kgcm").value;
+	document.getElementById("pa").value = parseFloat((kgcmI * 98066.5).toFixed(10));
+	document.getElementById("bar").value = parseFloat((kgcmI * .980665).toFixed(10));
+    document.getElementById("psi").value = parseFloat((kgcmI * 14.2233433).toFixed(10));
+    document.getElementById("psf").value = parseFloat((kgcmI * 2048.16144).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((kgcmI * 10000).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((kgcmI * 393.700787).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((kgcmI * 735.559135).toFixed(10));
+	document.getElementById("inhg").value = parseFloat((kgcmI * 28.9590211).toFixed(10));
+	document.getElementById("atm").value = parseFloat((kgcmI * 0.967841105).toFixed(10));
+}
+function psiConv() {
+	var psiI = document.getElementById("psi").value;
+	document.getElementById("pa").value = parseFloat((psiI * 6894.75729).toFixed(10));
+	document.getElementById("bar").value = parseFloat((psiI * .0689475729).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((psiI * .070306958).toFixed(10));
+    document.getElementById("psf").value = parseFloat((psiI * 144).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((psiI * 703.06958).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((psiI * 27.6799047).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((psiI * 51.7149252).toFixed(10));
+	document.getElementById("inhg").value = parseFloat((psiI * 2.03602068).toFixed(10));
+	document.getElementById("atm").value = parseFloat((psiI * .0680459639).toFixed(10));
+}
+function psfConv() {
+	var psfI = document.getElementById("psf").value;
+	document.getElementById("pa").value = parseFloat((psfI * 47.880259).toFixed(10));
+	document.getElementById("bar").value = parseFloat((psfI * .00047880259).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((psfI * .000488242764).toFixed(10));
+    document.getElementById("psi").value = parseFloat((psfI * .00694444444).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((psfI * 4.88242764).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((psfI * .19222156).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((psfI * .359131425).toFixed(10));
+	document.getElementById("inhg").value = parseFloat((psfI * .0141390325).toFixed(10));
+	document.getElementById("atm").value = parseFloat((psfI * .000472541416).toFixed(10));
+}
+function mmh2oConv() {
+	var mmh2oI = document.getElementById("mmh2o").value;
+	document.getElementById("pa").value = parseFloat((mmh2oI * 9.80665).toFixed(10));
+	document.getElementById("bar").value = parseFloat((mmh2oI * .0000980665).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((mmh2oI * .0001).toFixed(10));
+    document.getElementById("psi").value = parseFloat((mmh2oI * .00142233433).toFixed(10));
+	document.getElementById("psf").value = parseFloat((mmh2oI * .204816144).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((mmh2oI * .0393700787).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((mmh2oI * .0735559135).toFixed(10));
+    document.getElementById("inhg").value = parseFloat((mmh2oI * .00289590211).toFixed(10));
+	document.getElementById("atm").value = parseFloat((mmh2oI * .0000967841105).toFixed(10));
+}
+function inh2oConv() {
+	var inh2oI = document.getElementById("inh2o").value;
+	document.getElementById("pa").value = parseFloat((inh2oI * 249.08891).toFixed(10));
+	document.getElementById("bar").value = parseFloat((inh2oI * .0024908891).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((inh2oI * .00254).toFixed(10));
+    document.getElementById("psi").value = parseFloat((inh2oI * .036127292).toFixed(10));
+	document.getElementById("psf").value = parseFloat((inh2oI * 5.20233005).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((inh2oI * 25.4).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((inh2oI * 1.8683202).toFixed(10));
+    document.getElementById("inhg").value = parseFloat((inh2oI * .0735559135).toFixed(10));
+	document.getElementById("atm").value = parseFloat((inh2oI * .00245831641).toFixed(10));
+}
+function mmhgConv() {
+	var mmhgI = document.getElementById("mmhg").value;
+	document.getElementById("pa").value = parseFloat((mmhgI * 133.322387).toFixed(10));
+	document.getElementById("bar").value = parseFloat((mmhgI * .00133322387).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((mmhgI * .00135951).toFixed(10));
+    document.getElementById("psi").value = parseFloat((mmhgI * .0193367775).toFixed(10));
+	document.getElementById("psf").value = parseFloat((mmhgI * 2.78449595).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((mmhgI * 13.5951).toFixed(10));
+    document.getElementById("inh2o").value = parseFloat((mmhgI * .535240157).toFixed(10));
+    document.getElementById("inhg").value = parseFloat((mmhgI * .0393700787).toFixed(10));
+	document.getElementById("atm").value = parseFloat((mmhgI * .00131578966).toFixed(10));
+}
+function inhgConv() {
+	var inhgI = document.getElementById("inhg").value;
+	document.getElementById("pa").value = parseFloat((inhgI * 3386.38864).toFixed(10));
+	document.getElementById("bar").value = parseFloat((inhgI * .0338638864).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((inhgI * .034531554).toFixed(10));
+    document.getElementById("psi").value = parseFloat((inhgI * .491154147).toFixed(10));
+	document.getElementById("psf").value = parseFloat((inhgI * 70.7261972).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((inhgI * 345.31554).toFixed(10));
+    document.getElementById("inh2o").value = parseFloat((inhgI * 13.5951).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((inhgI * 25.4).toFixed(10));
+	document.getElementById("atm").value = parseFloat((inhgI * .0334210574).toFixed(10));
+}
+function atmConv() {
+	var atmI = document.getElementById("atm").value;
+	document.getElementById("pa").value = parseFloat((atmI * 101325).toFixed(10));
+	document.getElementById("bar").value = parseFloat((atmI * 1.01325).toFixed(10));
+    document.getElementById("kgcm").value = parseFloat((atmI * 1.03322745).toFixed(10));
+    document.getElementById("psi").value = parseFloat((atmI * 14.6959488).toFixed(10));
+	document.getElementById("psf").value = parseFloat((atmI * 2116.21662).toFixed(10));
+	document.getElementById("mmh2o").value = parseFloat((atmI * 10332.2745).toFixed(10));
+	document.getElementById("inh2o").value = parseFloat((atmI * 406.782462).toFixed(10));
+    document.getElementById("mmhg").value = parseFloat((atmI * 759.999892).toFixed(10));
+    document.getElementById("inhg").value = parseFloat((atmI * 29.9212556).toFixed(10));
+}
+paInput.addEventListener ("keyup", paConv);
+barInput.addEventListener ("keyup", barConv);
+kgcmInput.addEventListener ("keyup", kgcmConv);
+psiInput.addEventListener ("keyup", psiConv);
+psfInput.addEventListener ("keyup", psfConv);
+mmh2oInput.addEventListener ("keyup", mmh2oConv);
+inh2oInput.addEventListener ("keyup", inh2oConv);
+mmhgInput.addEventListener ("keyup", mmhgConv);
+inhgInput.addEventListener ("keyup", ingConv);
+atmInput.addEventListener ("keyup", atmConv);
+
+document.addEventListener("DOMContentLoaded", function(){
+    var calcInputs = document.querySelectorAll('.calculator input');
+    for (var i = 0; i < calcInputs.length; i++) {
+        calcInputs[i].addEventListener("keypress", function(e) {
+            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
+                return;   
+            } else {
+                e.preventDefault();
+            }
+        });
+    };
+});
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

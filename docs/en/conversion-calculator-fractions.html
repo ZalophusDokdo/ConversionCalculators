@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="Decimal to Fraction Calculator" />
+<meta name="description" content="Convert decimal to fraction or fraction to decimal with the use of conversion calculator.  Additional calculators available." />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>Decimal to Fraction Calculator</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding: 0px 5px 0px 5px;
+  max-width:190px;
+  width:100%;
+  box-shadow: none;
+  height:27px;
+}
+
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+
+  .rtl span.input-headline {
+    text-align: right;
+  }
+
+
+/* Fraction/Decimal */
+.decimal,
+.fraction {
+  max-width:300px;
+}
+
+.fraction {
+  display:table;
+  margin-top:20px;
+}
+
+.fraction input {
+  max-width:90px;
+}
+
+.whole-number,
+.fraction-number {
+  display: table-cell;
+  vertical-align:middle;
+}
+
+.whole-number {
+  padding-right:10px;
+}
+.rtl .whole-number {
+  padding-left:10px;
+  padding-right: 0px;
+}
+
+.fraction span {
+  display: block;
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .calculator input {
+        max-width: calc(100% - 10px);
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+}
+
+#language-toggle {
+    padding:25px 0 0 0;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/global3683.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">Decimal  to Fraction Calculator</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">About:</h2>
+        <p>Convert fractions to decimals or decimals to fractions with easy to use  conversion calculator.</p>
+    </div>
+
+    <div class="calculator">
+        <div class="decimal">
+            <span class="input-headline">Decimal:</span>
+            <input name="decimal" id="decimal" type="number" data-pattern="decimal" placeholder="Decimal">
+        </div>
+        <div class="fraction">
+            <div class="whole-number">
+                <span class="input-headline">Whole Number:</span>
+                <input placeholder="Whole Number" name="fraction-whole" data-pattern="number" id="fraction-whole" type="number">
+            </div>
+            <div class="fraction-number">
+                <span class="input-headline">Fraction:</span>
+                <input placeholder="Numerator" name="fraction-numerator" data-pattern="number" id="fraction-numerator" type="number">
+                <span>/</span>
+                <input placeholder="Denominator" name="fraction-denominator" data-pattern="number" id="fraction-denominator" type="number">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="clear"></div>
+        
+<script type="text/javascript">
+var decimalInput = document.getElementById("decimal");
+var fractionWholeInput = document.getElementById("fraction-whole");
+var fractionNumInput = document.getElementById("fraction-numerator");
+var fractionDenInput = document.getElementById("fraction-denominator");
+
+var fractionInputs = document.querySelector(".fraction");
+
+//decimal to fraction
+function dec2frac(){
+    fractionWholeInput.value = ""; 
+    fractionNumInput.value = "";
+    fractionDenInput.value = "";
+    
+	var decimal = document.getElementById('decimal').value;
+    if (String(decimal).split('.')[0] == "") {
+        decimal = 0 + decimal;
+    }
+        
+    var gcd = function(a, b) {
+        if (b < 0.0000001) return a;                // Since there is a limited precision we need to limit the value.
+
+        return gcd(b, Math.floor(a % b));           // Discard any fractions due to limitations in precision.
+    };
+    
+    var whole;
+    var fraction = decimal;
+    var len = fraction.toString().length - 2;
+    if (len == "") {len = "0";}
+    var denominator = Math.pow(10, len);
+    var numerator = fraction * denominator;
+    var divisor = gcd(numerator, denominator);    // Should be 5
+
+    numerator /= divisor;                         // Should be 687
+    denominator /= divisor;   
+    
+    if (denominator == 1) {
+        whole = numerator;
+        numerator = "";
+        denominator = ""
+    } else if (numerator > denominator) {
+        whole = String(decimal).split('.')[0];
+        numerator = +numerator - (whole * denominator);
+        denominator = denominator;
+    } else {
+        whole = "0";
+    }
+
+    fractionWholeInput.value = (whole==0) ? "0" : whole;
+    fractionNumInput.value = numerator;
+    fractionDenInput.value = denominator;
+}
+
+
+//fraction to decimal
+function frac2dec() {
+    document.getElementById('decimal').value = "";
+    var whole = fractionWholeInput.value; 
+    var numerator = fractionNumInput.value;
+    var denomiator = fractionDenInput.value;
+    if (whole > 0 && denomiator > 0 && numerator > 0) {
+        numerator = (whole * denomiator) + Number(numerator);
+    } 
+    var improperFraction = numerator+"/"+denomiator;
+	var decimal = eval(improperFraction); 
+	decimalInput.value = parseFloat(decimal.toFixed(5));
+}
+
+decimalInput.addEventListener("keyup", dec2frac);
+fractionInputs.addEventListener("keyup", frac2dec);
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    var patternInputs = document.querySelectorAll('[data-pattern]');
+    for (var i = 0; i < patternInputs.length; i++) {
+        patternInputs[i].addEventListener("keypress", function(e) {
+            if (this.dataset.pattern == "number" && (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13))) {
+                return;
+            } else if (this.dataset.pattern == "decimal" && (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46))) {
+                return;   
+            }else {
+                e.preventDefault();
+            }
+        });
+    };
+});
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

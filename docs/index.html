@@ -1,19 +1,24 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en-kr">
-    
+
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="keywords" content="Online Conversion Calculators, digikey" />
 <meta name="description" content="online conversion calculators include resistor color code, decimal to fraction, time constant, battery life, pressure, Ohm&#39;s Law, and more." />
 
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link href="css/bootstrap.united.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<link href="css/font-awesome.min.css" rel="stylesheet">
+
 <title>Online Conversion Calculators</title>
 <style type="text/css">
 #language-toggle { padding:25px 0 0 0; }
-.nav ul {list-style-type:none; margin:0px; padding-left:25px; margin-right:15px; display:flex; flex-wrap: wrap;} 
-.nav ul li {float:left; width:205px; margin:3px;} 
-.nav ul li a {display:block; padding:4px 4px 4px 60px; margin:2px; background-color:#999; border:solid 1px #ccc; color:#fff; text-decoration:none; font-weight:bold; text-align:left; height:50px;  display:table-cell; vertical-align:middle; width:205px;  background-repeat:no-repeat; background-position:left;}
-.nav ul li a:hover, .nav ul li a.active {background-color:#c62920;}
+.nav-button ul {list-style-type:none; margin:0px; padding-left:25px; margin-right:15px; display:flex; flex-wrap: wrap;} 
+.nav-button ul li {float:left; width:205px; margin:3px;} 
+.nav-button ul li a {display:block; padding:4px 4px 4px 60px; margin:2px; background-color:#505; border:solid 1px #ccc; color:#fff; text-decoration:none; font-weight:bold; text-align:left; height:50px;  display:table-cell; vertical-align:middle; width:205px;  background-repeat:no-repeat; background-position:left;}
+.nav-button ul li a:hover, .nav-button ul li a.active {background-color:#c62920;}
 
 #request-nav {list-style-type:none; margin:2px 0px 0px 2px; color:#999; padding:0px; display:table ; float:left; width:205px;} 
 #request-nav a {display:block; padding:1px 0px 2px 60px; margin:2px; border:1px solid #999; background-color:#FFF; border:solid 3px #ccc; color:#999; text-decoration:none; font-weight:bold; text-align:left; height:50px;  display:table-cell; vertical-align:middle; width:205px;  background-repeat:no-repeat; background-position:left;}
@@ -21,10 +26,9 @@
 .rtl #request-nav {margin:2px 2px 0px 0px; float:right; padding: 0px;} 
 .rtl #request-nav a {padding:1px 60px 2px 0px; text-align:right; background-position:right;}
 
-
-.rtl .nav ul {margin-left:15px; margin-right:0px; padding: 0px;} 
-.rtl .nav ul li {float:right;} 
-.rtl .nav ul li a {padding:4px 60px 4px 4px; text-align:right; background-position:right;}
+.rtl .nav-button ul {margin-left:15px; margin-right:0px; padding: 0px;} 
+.rtl .nav-button ul li {float:right;} 
+.rtl .nav-button ul li a {padding:4px 60px 4px 4px; text-align:right; background-position:right;}
 
 .battery-life a {background:url(images/battery-icon2125.png?la=en)}
 .btu-joules a {background:url(images/joules-icon2125.png?la=en)}
@@ -52,8 +56,8 @@
 .weight a  {background:url(images/scales-icon2125.png?la=en)}
 
 @media screen and (max-width:500px){
-.nav ul {padding:0px;} 
-.nav ul li {width: auto; margin:3px; padding-left: 25px;} 
+.nav-button ul {padding:0px;} 
+.nav-button ul li {width: auto; margin:3px; padding-left: 25px;} 
 #request-nav {width: auto; padding-left: 12.5px;}
 }
 </style>
@@ -62,51 +66,73 @@
         
 </head>
 <body itemscope itemtype="http://schema.org/WebPage" class="ltr">
-        
-<div id="content">
-  <div class="layout-onecolumn">
-    <div class="content-column">
-      <div class="richtextcontent" dir="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
 
-<h1 class="headline-border">Online Conversion Calculators by Digi-Key</h1>
-<p>Digi-Key's online conversion calculators offer a one-stop resource for many electronics industry calculations. Whether you are identifying a 4 band resistor or trying to determine battery life, Digi-Key can help you get the answers you need. Use Digi-Key's calculators as a quick and easy-to-use resource and don't forget to bookmark the page for future use.</p>
-<div class="nav" cookie-tracking="ref_page_type=OCC;ref_page_sub_type=CAL;ref_page_id=%7BFE948578-80CD-40AF-A1CA-19F1BE1A1E47%7D;ref_page_event=Select%20Calculator">
+<h1 class="headline-border">Online Conversion Calculators</h1>
+<p>online conversion calculators offer a one-stop resource for many electronics industry calculations. Whether you are identifying a 4 band resistor or trying to determine battery life, Use calculators as a quick and easy-to-use resource.</p>
+<div class="nav-button">
 <ul>
-    <li class="battery-life"><a href="conversion-calculator-battery-life.html">Battery Life Calculator</a></li>
-    <li class="btu-joules"><a href="conversion-calculator-btu-to-joules.html">BTU/Joules Conversion</a></li>
-    <li class="capacitance"><a href="conversion-calculator-capacitance.html">Capacitance Conversion</a></li>
-    <li class="capacitor-discharge"><a href="conversion-calculator-capacitor-safety-discharge.html">Capacitor Safety Discharge Calculator</a></li>
-    <li class="current-divider"><a href="conversion-calculator-circuit-current-divider.html">Current Divider Conversion</a></li>
-    <li class="dbm-watts"><a href="conversion-calculator-dbm-to-watts.html">dBm to Watts Calculator</a></li>
-    <li class="fractions"><a href="conversion-calculator-fractions.html">Decimal Fraction Conversion</a></li>
-    <li class="force"><a href="conversion-calculator-force.html">Force Conversion</a></li>
-    <li class="inductance"><a href="conversion-calculator-inductance.html">Inductance Conversion</a></li>
-    <li class="led-series"><a href="conversion-calculator-led-series-resistor.html">LED Series Resistor Calculator</a></li>
-    <li class="length"><a href="conversion-calculator-length.html">Length Conversion</a></li>
-    <li class="ohms-law"><a href="conversion-calculator-ohms.html">Ohm's Law Calculator</a></li>
-    <li class="resistor-parallel-series"><a href="conversion-calculator-parallel-and-series-resistor.html">Parallel and Series Resistor Calculator</a></li>
-    <li class="pcb-trace-width"><a href="conversion-calculator-pcb-trace-width.html">PCB Trace Width Conversion</a></li>
-    <li class="pressure"><a href="conversion-calculator-pressure.html">Pressure Conversion</a></li>
-    <li class="reactance"><a href="conversion-calculator-reactance.html">Reactance Calculator</a></li>
-    <li class="resistors"><a href="conversion-calculator-resistor-color-code-4-band.html">Resistor Color Code Calculator</a></li>
-    <li class="capacitor-series-parallel"><a href="conversion-calculator-series-and-parallel-capacitor.html">Series and Parallel Capacitor Calculator</a></li>
-    <li class="temperature"><a href="conversion-calculator-temperature.html">Temperature Conversion</a></li>
-    <li class="time"><a href="conversion-calculator-time-constant.html">Time Constant Calculator</a></li>
-    <li class="voltage-divider"><a href="conversion-calculator-voltage-divider.html">Voltage Divider Conversion</a></li>
-    <li class="volume"><a href="conversion-calculator-volume.html">Volume Conversion</a></li>
-    <li class="weight"><a href="conversion-calculator-weight.html">Weight Conversion</a></li>
+    <li class="battery-life"><a href="en/conversion-calculator-battery-life.html">Battery Life Calculator</a></li>
+    <li class="btu-joules"><a href="en/conversion-calculator-btu-to-joules.html">BTU/Joules Conversion</a></li>
+    <li class="capacitance"><a href="en/conversion-calculator-capacitance.html">Capacitance Conversion</a></li>
+    <li class="capacitor-discharge"><a href="en/conversion-calculator-capacitor-safety-discharge.html">Capacitor Safety Discharge Calculator</a></li>
+    <li class="current-divider"><a href="en/conversion-calculator-circuit-current-divider.html">Current Divider Conversion</a></li>
+    <li class="dbm-watts"><a href="en/conversion-calculator-dbm-to-watts.html">dBm to Watts Calculator</a></li>
+    <li class="fractions"><a href="en/conversion-calculator-fractions.html">Decimal Fraction Conversion</a></li>
+    <li class="force"><a href="en/conversion-calculator-force.html">Force Conversion</a></li>
+    <li class="inductance"><a href="en/conversion-calculator-inductance.html">Inductance Conversion</a></li>
+    <li class="led-series"><a href="en/conversion-calculator-led-series-resistor.html">LED Series Resistor Calculator</a></li>
+    <li class="length"><a href="en/conversion-calculator-length.html">Length Conversion</a></li>
+    <li class="ohms-law"><a href="en/conversion-calculator-ohms.html">Ohm's Law Calculator</a></li>
+    <li class="resistor-parallel-series"><a href="en/conversion-calculator-parallel-and-series-resistor.html">Parallel and Series Resistor Calculator</a></li>
+    <li class="pcb-trace-width"><a href="en/conversion-calculator-pcb-trace-width.html">PCB Trace Width Conversion</a></li>
+    <li class="pressure"><a href="en/conversion-calculator-pressure.html">Pressure Conversion</a></li>
+    <li class="reactance"><a href="en/conversion-calculator-reactance.html">Reactance Calculator</a></li>
+    <li class="resistors"><a href="en/conversion-calculator-resistor-color-code-4-band.html">Resistor Color Code Calculator</a></li>
+    <li class="capacitor-series-parallel"><a href="en/conversion-calculator-series-and-parallel-capacitor.html">Series and Parallel Capacitor Calculator</a></li>
+    <li class="temperature"><a href="en/conversion-calculator-temperature.html">Temperature Conversion</a></li>
+    <li class="time"><a href="en/conversion-calculator-time-constant.html">Time Constant Calculator</a></li>
+    <li class="voltage-divider"><a href="en/conversion-calculator-voltage-divider.html">Voltage Divider Conversion</a></li>
+    <li class="volume"><a href="en/conversion-calculator-volume.html">Volume Conversion</a></li>
+    <li class="weight"><a href="en/conversion-calculator-weight.html">Weight Conversion</a></li>
     <li class="request" id="request-nav">
     <div id="request-nav"><a href="">Add new calculator soon</a></div>
     </li>
 </ul>
 </div>
 <div class="clear">&nbsp;</div>
-
-      </div>
-    </div>
-  </div>
-</div>
         
-</body>
-</html>
+            </div>
+        </div>
+    </div>
 
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="en/release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="en/privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="js/jquery.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('en/navigation.html', function(){
+                    jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>
