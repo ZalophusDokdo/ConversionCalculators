@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="시간 상수 계산기" />
+<meta name="description" content="전압, 정전 용량, 부하 저항 값을 입력하여 저항기 커패시터 회로의 저항기 커패시터(RC) 시간 상수를 계산해 보세요." />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>저항기 커패시터(RC) 시간 상수 계산기</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label,
+.input-answer,
+.input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+.rtl .input-label,
+.rtl .input-answer,
+.rtl .input-dropdown {
+    position: absolute;
+    right: unset;
+    left: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 4px 0 0 4px;
+    font-weight:bold;
+}
+.input-dropdown {
+    padding:5px;
+}
+.input-answer {
+    left: 0;
+    right:auto;
+    border-radius: 4px 0 0 4px;
+    width:25px;
+}
+    .rtl .input-answer {
+        left: auto;
+        right:0;
+        border-radius: 0 4px 4px 0;
+    }
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding: 0px 5px 0px 5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+input.answer {
+    background-color:#F8F8F8 
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left:5px;
+    padding-right:30px;
+}
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+  .rtl span.input-headline {
+    text-align: right;
+  }
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height:64px;
+    width:64px;
+}
+#language-toggle {
+    padding:25px 0 0 0;
+}
+
+@media screen and (max-width: 600px) {
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        width:100%;
+    }
+    .calculator input {
+        max-width:100%;
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width:100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear:both;
+    }
+        .rtl .related-products div {
+            text-align: right;
+        }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right:10px;
+        height:32px;
+        width:32px;
+        margin-bottom:10px;
+    }
+        .rtl .related-products div a img {
+            float: right;
+            margin-right:0;
+            margin-left:10px;
+        }
+}  
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/globala17d.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">저항기 커패시터(RC) 시간 상수 계산기</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">정보:</h2>
+        <p>시간 상수는 변화를 유도하는 임펄스가 인가된 후 이전 값과 새로운 값 간 차이의 63.2%까지 커패시터를 충전하거나 방전하는 데 필요한 시간 측정값입니다.</p>
+<p>주어진 전압에 대해 커패시터에서 에너지(E) 및 시간 상수(RC)를 계산해 보세요. 이 계산기를 통해 2개 값을 구할 수 있습니다. 시간 상수(T)는 정전 용량(C)과 부하 저항(R)의 값으로 구할 수 있습니다. 커패시터에 저장된 에너지(E)는 전압(V), 정전 용량, 부하 저항의 3개 값을 입력하여 구할 수 있습니다.</p>
+    </div>
+
+<div class="calculator">
+        <div class="Volt">
+            <span class="input-headline">전압:</span>
+            <div class="calculator-input">
+                <span class="input-label">V</span>
+                <input placeholder="전압 입력..." name="Volt" id="Volt" type="number">
+            </div>
+        </div>
+        <div class="Cap">
+            <span class="input-headline">정전 용량:</span>
+            <div class="calculator-input">
+                <span class="input-label">μF</span>
+                <input placeholder="정전 용량 입력..." name="Cap" id="Cap" type="number">
+            </div>
+        </div>
+        <div class="LR">
+            <span class="input-headline">부하 저항:</span>
+            <div class="calculator-input">
+                <span class="input-label">Ω</span>
+                <input placeholder="부하 저항 입력..." name="LR" id="LR" type="number">
+            </div>
+        </div>
+        <div class="Sec">
+            <span class="input-headline">초:</span>
+            <div class="calculator-input">
+                <span class="input-answer">=</span>
+                <span class="input-label">s</span>
+                <input class="answer" name="Sec" id="Sec" type="number" readonly="">
+            </div>
+        </div>
+        <div class="Joule">
+            <span class="input-headline">줄:</span>
+            <div class="calculator-input">
+                <span class="input-answer">=</span>
+                <span class="input-label">J</span>
+                <input class="answer" name="Joule" id="Joule" type="number" readonly="">
+            </div>
+        </div>
+</div>
+</div>
+<div class="clear"></div>
+
+<script type="text/javascript"  src="../js/jquery1101mine6f2.js"></script>
+<script type="text/javascript">
+var VInput = document.getElementById("Volt");
+var CInput = document.getElementById("Cap");
+var LInput = document.getElementById("LR");
+
+function TimeConstant() {
+square = Math.pow(document.getElementById("Volt").value, 2);
+tJoules = square * document.getElementById("Cap").value / 2 / 1e+6;
+document.getElementById("Joule").value = parseFloat(tJoules.toFixed(10));
+
+tSeconds = document.getElementById("LR").value * document.getElementById("Cap").value / 1e+6;
+document.getElementById("Sec").value = parseFloat(tSeconds.toFixed(10));
+}
+
+VInput.addEventListener ("keyup", TimeConstant);
+CInput.addEventListener ("keyup", TimeConstant);
+LInput.addEventListener ("keyup", TimeConstant);
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+		            jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+		            setTimeout(function(){$("li.conversion").addClass('active'); $('li.conversion li:eq(19)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

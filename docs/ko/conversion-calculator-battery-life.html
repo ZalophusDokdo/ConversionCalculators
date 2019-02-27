@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="배터리 수명 계산기, digikey, 배터리 용량, 배터리 용량 계산" />
+<meta name="description" content="배터리 수명 계산기를 사용하여 배터리 용량과 배터리 수명 시간을 예측하세요. 더 많은 온라인 변환 계산기를 확인해 보세요!" />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>배터리 수명 계산기</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label,
+.input-answer,
+.input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+.rtl .input-label,
+.rtl .input-answer,
+.rtl .input-dropdown {
+    position: absolute;
+    left: 0;
+    right: unset;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+    font-weight:bold;
+}
+.input-dropdown {
+    padding:5px;
+}
+.input-answer {
+    left: 0;
+    right:auto;
+    border-radius: 4px 0 0 4px;
+    width:25px;
+}
+    .rtl .input-answer {
+        left: auto;
+        right:0;
+        border-radius: 0 4px 4px 0;
+    }
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding: 0px 5px 0px 5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+input.answer {
+    background-color:#F8F8F8 
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left:5px;
+    padding-right:30px;
+}
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+  .rtl span.input-headline {
+    text-align: right;
+  }
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height:64px;
+    width:64px;
+}
+#language-toggle {
+    padding:25px 0 0 0;
+}
+.calculator {
+display: flex;
+flex-wrap: wrap;
+}
+.battery {
+margin-right: 40px;
+}
+.rtl .battery {
+margin-left: 40px;
+margin-right: 0px;
+}
+.unit-title {
+    overflow: hidden;
+    text-align: left;
+}
+.rtl .unit-title {
+    overflow: hidden;
+    text-align: right;
+}
+
+@media screen and (max-width: 600px) {
+.unit-title {
+display: block;
+text-align: center;
+}
+    .unit-title:before,
+    .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .rtl .unit-title:before,
+    .rtl .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 0px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .unit-title:before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+    .unit-title:after {
+        left: 0.5em;
+        margin-right: -50%;
+    }
+.calculator {
+display: block;
+}
+.battery {
+margin-right: 0px;
+}
+.rtl .battery {
+margin-left: 0px;
+}
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        width:100%;
+    }
+    .calculator input {
+        max-width:100%;
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width:100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear:both;
+    }
+        .rtl .related-products div {
+            text-align: right;
+        }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right:10px;
+        height:32px;
+        width:32px;
+        margin-bottom:10px;
+    }
+        .rtl .related-products div a img {
+            float: right;
+            margin-right:0;
+            margin-left:10px;
+        }
+}  
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/globala17d.css" />
+        
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">배터리 수명 계산기</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">정보:</h2>
+        <p>일반적으로 배터리 수명은 시간당 밀리암페어 단위의 정격 전류(약어: mAh)를 기반으로 하여 계산됩니다. 암페어는 부하를 향해 흐르는 전류를 측정하는 데 사용되는 전기 단위입니다. 배터리 수명 또는 용량은 배터리의 입력 전류 정격과 회로의 부하 전류에서 계산할 수 있습니다. 부하 전류가 낮으면 배터리 수명이 길어지며 그 반대의 경우도 마찬가지입니다. 배터리 용량을 구하는 계산은 다음 공식을 통해 수학적으로 파생될 수 있습니다.</p>
+        <p>배터리 수명 = 배터리 용량(mAH) / 부하 전류(mA) * 0.70</p>
+        <p>* 계수 0.7은 배터리 수명에 영향을 줄 수 있는 외부 계수를 감안한 것입니다.</p>
+        <p>작동 시간 = (10 * 암페어시) / 부하(W)</p>
+    </div>
+
+    <div class="calculator">
+        <div class="battery">
+            <h2 class="unit-title">배터리 수명</h2>
+            <div class="batteryCapacity">
+                <span class="input-headline">배터리 용량:</span>
+                <div class="calculator-input">
+                    <span class="input-label">mAh</span>
+                    <input placeholder="용량 입력..." name="batcap" id="batcap" type="number">
+                </div>
+            </div>
+            <div class="deviceConsumption">
+                <span class="input-headline">장치 소비량:</span>
+                <div class="calculator-input">
+                    <span class="input-label">mA</span>
+                    <input placeholder="소비량 입력..." name="devcon" id="devcon" type="number">
+                </div>
+            </div>
+            <div class="consumptionRate">
+                <span class="input-headline">소비율:</span>
+                <div class="calculator-input">
+                    <input placeholder="소비율 입력..." name="consrate" id="consrate" value="0.7" type="number">
+                </div>
+            </div>
+            <div class="estimatedHours">
+                <span class="input-headline">예상 시간:</span>
+                <div class="calculator-input">
+<span class="input-answer">=</span>
+                    <input placeholder="(용량 / 소비량) * 소비율" name="esthr" id="esthr" type="number" class="answer" readonly="">
+                </div>
+            </div>
+        </div>
+        <div class="battery">
+            <h2 class="unit-title">작동 시간 계산</h2>
+            <div class="ampHours">
+                <span class="input-headline">암페어시:</span>
+                <div class="calculator-input">
+                    <span class="input-label">Ah</span>
+                    <input placeholder="암페어시 입력..." name="amp" id="amp" type="number">
+                </div>
+            </div>
+            <div class="loadWatts">
+                <span class="input-headline">부하(W):</span>
+                <div class="calculator-input">
+                    <span class="input-label">W</span>
+                    <input placeholder="부하(W) 입력..." name="load" id="load" type="number">
+                </div>
+            </div>
+            <div class="runtime">
+                <span class="input-headline">작동 시간:</span>
+                <div class="calculator-input">
+<span class="input-answer">=</span>
+                    <input placeholder="(10 * Ah) / W" name="run" id="run" type="number" class="answer" readonly="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clear"></div>
+
+<script type="text/javascript"  src="../js/jquery1101mine6f2.js"></script>
+<script type="text/javascript">
+var BCInput = document.getElementById("batcap");
+var DCInput = document.getElementById("devcon");
+var ConsRate = document.getElementById("consrate");
+
+var LoadInput = document.getElementById("load");
+var AmpInput = document.getElementById("amp");
+
+function BatteryLife() {
+var Estimate = document.getElementById("batcap").value / document.getElementById("devcon").value * document.getElementById("consrate").value;
+document.getElementById("esthr").value = parseFloat(Estimate.toFixed(10));
+}
+
+function Runtime() {
+var Runt = 10 * document.getElementById("amp").value / document.getElementById("load").value;
+document.getElementById("run").value = parseFloat(Runt.toFixed(10));
+}
+
+
+BCInput.addEventListener("keyup", BatteryLife);
+DCInput.addEventListener("keyup", BatteryLife);
+ConsRate.addEventListener("keyup", BatteryLife);
+
+LoadInput.addEventListener("keyup", Runtime);
+AmpInput.addEventListener("keyup", Runtime);
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+		            jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+		            setTimeout(function(){$("li.conversion").addClass('active'); $('li.conversion li:eq(0)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="PCB 트레이스 폭 변환 계산기" />
+<meta name="description" content="PCB 트레이스 폭 계산기를 사용하여 지정된 전류에 대해 필요한 트레이스 폭을 계산합니다." />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>PCB 트레이스 폭 변환 계산기</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label,
+.input-answer,
+.input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+.rtl .input-label,
+.rtl .input-answer,
+.rtl .input-dropdown {
+    position: absolute;
+    right: unset;
+    left: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 4px 0px 0px 4px;
+    font-weight:bold;
+}
+.input-dropdown {
+    padding:5px;
+}
+.input-answer {
+    left: 0;
+    right:auto;
+    border-radius: 4px 0 0 4px;
+    width:25px;
+}
+    .rtl .input-answer {
+        left: auto;
+        right:0;
+        border-radius: 0 4px 4px 0;
+    }
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding: 0px 5px 0px 5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+input.answer {
+    background-color:#F8F8F8 
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left:5px;
+    padding-right:30px;
+}
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+  .rtl span.input-headline {
+    text-align: right;
+  }
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height:64px;
+    width:64px;
+}
+#language-toggle {
+    padding:25px 0 0 0;
+}
+.unit-title {
+    overflow: hidden;
+    text-align: center;
+}
+@media screen and (max-width: 600px) {
+.unit-title {
+display: block;
+}
+    .unit-title:before,
+    .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 1px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .rtl .unit-title:before,
+    .rtl .unit-title:after {
+        background-color: #000;
+        content: "";
+        display: inline-block;
+        height: 0px;
+        position: relative;
+        vertical-align: middle;
+        width: 50%;
+    }
+    .unit-title:before {
+        right: 0.5em;
+        margin-left: -50%;
+    }
+    .unit-title:after {
+        left: 0.5em;
+        margin-right: -50%;
+    }
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        width:100%;
+    }
+    .calculator input {
+        max-width:100%;
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width:100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear:both;
+    }
+        .rtl .related-products div {
+            text-align: right;
+        }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right:10px;
+        height:32px;
+        width:32px;
+        margin-bottom:10px;
+    }
+        .rtl .related-products div a img {
+            float: right;
+            margin-right:0;
+            margin-left:10px;
+        }
+}  
+
+
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+}
+.pcbwidth {
+  margin-right:20px;
+}
+
+@media screen and (max-width: 600px) {
+  .calculator {
+    display: block;
+  }
+  .pcbwidth {
+    margin-right:0;
+  }
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/globala17d.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">PCB 트레이스 폭 변환 계산기</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">정보:</h2>
+        <p>지정된 전류에 필요한 트레이스 폭을 계산합니다. 필요한 트레이스 폭, 저항, 전압 드롭 및 손실을 포함하여 필요한 용량에 대한 다양한 측정을 계산합니다.</p>
+        <p>이 PCB 트레이스 폭 계산기는 IPC-2221의 공식을 사용합니다.</p>
+    </div>
+    <div class="calculator">
+        
+        <div class="pcbwidth">
+            <h2 class="unit-title">입력</h2>
+            <div class="current">
+                <span class="input-headline">전류:</span>
+                <div class="calculator-input">
+                    <span class="input-label">A</span>
+                    <input placeholder="전류 입력..." name="current" oninput="compute()" id="current" type="number" />
+                </div>
+            </div>
+            <div class="cuthick">
+                <span class="input-headline">두께:</span>
+                <div class="calculator-input">
+                    <select id="thicknessUnit" onchange="compute()" class="input-dropdown" name="thicknessUnit">
+                        <option value=".0035" selected="selected">oz/ft²</option>
+                        <option value="2.54e-3">mil</option>
+                        <option value=".1">MM</option>
+                        <option value="1e-4">µm</option>
+                    </select>
+                    <input placeholder="두께 입력..." name="thickness" oninput="compute()" id="thickness" type="number" />
+                </div>
+            </div>
+            <div class="temprise">
+                <span class="input-headline">온도 상승:</span>
+                <div class="calculator-input">
+                    <select id="tempRiseUnit" onchange="compute()" class="input-dropdown" name="tempRiseUnit">
+                        <option value="C" selected="selected">°C</option>
+                        <option value="F">°F</option>
+                    </select>
+                    <input placeholder="온도 입력..." name="tempRise" oninput="compute()" id="tempRise" type="number" />
+                </div>
+
+         	</div>
+            <div class="ambtemp">
+                <span class="input-headline">주위 온도:</span>
+                <div class="calculator-input">
+                    <select id="ambTempUnit" onchange="compute()" class="input-dropdown" name="ambTempUnit">
+                        <option value="C" selected="selected">°C</option>
+                        <option value="F">°F</option>
+                    </select>
+                    <input placeholder="온도 입력..." name="ambTemp" oninput="compute()" id="ambTemp" type="number" />
+                </div>
+            </div>
+            <div class="tracelength">
+                <span class="input-headline">트레이스 길이:</span>
+                <div class="calculator-input">
+                    <select id="traceLengthUnit" onchange="compute()" class="input-dropdown" name="traceLengthUnit">
+                        <option value=".393701" selected="selected">in</option>
+                        <option value=".032808">ft</option>
+                        <option value="393.7008">mil</option>
+                        <option value="10">MM</option>
+                        <option value="10000">µm</option>
+                        <option value="1">센티미터</option>
+                        <option value=".01">m</option>
+                    </select>
+                    <input placeholder="길이 입력..." name="traceLength" oninput="compute()" id="traceLength" type="number" />
+                </div>
+            </div>
+        </div>
+        
+        <div class="pcbwidth">
+            <h2 class="unit-title">내부층</h2>
+            <div class="intrtw">
+                <span class="input-headline">필요한 트레이스 폭:</span>
+                <div class="calculator-input">
+                    <select id="intRTWUnit" class="input-dropdown" onchange="compute()" name="intRTWUnit">
+                        <option value="2.54e-3" selected="selected">mil</option>
+                        <option value=".1">MM</option>
+                        <option value="1e-4">µm</option>
+                    </select>
+                    <span class="input-answer">=</span>
+                    <input name="intRTW" id="intRTW" class="answer" type="number" readonly />
+                </div>
+            </div>
+            <div class="intres">
+                <span class="input-headline">저항:</span>
+                <div class="calculator-input">
+                    <span class="input-label">Ω</span> <span class="input-answer">=</span>
+                    <input name="intRS" id="intRS" class="answer" type="number" readonly />
+                </div>
+            </div>
+            <div class="intvd">
+                <span class="input-headline">전압 강하:</span>
+                <div class="calculator-input">
+                    <span class="input-label">V</span> <span class="input-answer">=</span>
+                    <input name="intVD" id="intVD" class="answer" type="number" readonly/>
+                </div>
+            </div>
+            <div class="intloss">
+                <span class="input-headline">전력 손실:</span>
+                <div class="calculator-input">
+                    <span class="input-label">W</span> <span class="input-answer">=</span>
+                    <input name="intPL" id="intPL" class="answer" type="number" readonly />
+                </div>
+            </div>
+        </div>
+        
+        <div class="pcbwidth">
+            <h2 class="unit-title">공기 중 외층</h2>
+            <div class="extrtw">
+                <span class="input-headline">필요한 트레이스 폭:</span>
+                <div class="calculator-input">
+                    <select id="extRTWUnit" class="input-dropdown" onchange="compute()" name="extRTWUnit">
+                        <option value="2.54e-3" selected="selected">mil</option>
+                        <option value=".1">MM</option>
+                        <option value="1e-4">µm</option>
+                    </select>
+                    <span class="input-answer">=</span>
+                    <input name="extRTW" id="extRTW" class="answer" type="number" readonly />
+                </div>
+            </div>
+            <div class="extres">
+                <span class="input-headline">저항:</span>
+                <div class="calculator-input">
+                    <span class="input-label">Ω</span> <span class="input-answer">=</span>
+                    <input name="extRS" id="extRS" class="answer" type="number" readonly />
+                </div>
+            </div>
+            <div class="extvd">
+                <span class="input-headline">전압 강하:</span>
+                <div class="calculator-input">
+                    <span class="input-label">V</span> <span class="input-answer">=</span>
+                    <input name="extVD" id="extVD" class="answer" type="number" readonly />
+                </div>
+            </div>
+            <div class="extloss">
+                <span class="input-headline">전력 손실:</span>
+                <div class="calculator-input">
+                    <span class="input-label">W</span> <span class="input-answer">=</span>
+                    <input name="extPL" id="extPL" class="answer" type="number" readonly />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript"  src="../js/jquery1101mine6f2.js">
+</script><script type="text/javascript">
+function compute() {
+    Cur = document.getElementById("current").value
+    if (Cur != "") {
+        tempR = document.getElementById("tempRise").value
+        tempRU = document.getElementById("tempRiseUnit").value;
+        if (tempRU == "F"){
+            tempR = tempR * 5 / 9;
+        }
+        thick = document.getElementById("thickness").value * document.getElementById("thicknessUnit").value;
+        ambT = document.getElementById("ambTemp").value
+        tempRU = document.getElementById("ambTempUnit").value;
+        if (tempRU == "F"){
+            ambT = (ambT - 32) * 5 / 9;
+        }
+        traceL = document.getElementById("traceLength").value / document.getElementById("traceLengthUnit").value;
+
+        rho = 1.7e-6
+        alpha = 3.9e-3
+        Ai = A_internal (Cur,tempR)
+        Ai = Ai * 2.54 * 2.54 / 1e6
+        RTWi = Ai / thick
+        RTWi = RTWi / document.getElementById("intRTWUnit").value
+        Tval = 1 * ambT + 1 * tempR
+        RSi = (rho * traceL / Ai) * (1 + alpha * (Tval - 25))
+        VDi = RSi * Cur
+        PLi = Cur * Cur * RSi
+        Ae = A_external (Cur,tempR)
+        Ae = Ae * 2.54 * 2.54 / 1e6
+        RTWe = Ae / thick
+        RTWe = RTWe / document.getElementById("extRTWUnit").value
+        RSe = (rho * traceL / Ae) * (1 + alpha * (Tval - 25))
+        VDe = RSe * Cur
+        PLe = Cur * Cur * RSe
+
+        document.getElementById("intRTW").value = RTWi.toPrecision(10)
+        document.getElementById("intRS").value = RSi.toPrecision(10)
+        document.getElementById("intVD").value = VDi.toPrecision(10)
+        document.getElementById("intPL").value = PLi.toPrecision(10)
+        
+        document.getElementById("extRTW").value = RTWe.toPrecision(10)
+        document.getElementById("extRS").value = RSe.toPrecision(10)
+        document.getElementById("extVD").value = VDe.toPrecision(10)
+        document.getElementById("extPL").value = PLe.toPrecision(10)
+        }
+        function A_external(current,rise) {
+            k = 0.048
+            b = 0.44
+            c = 0.725
+            return Math.pow((current/(k*Math.pow(rise,b))),1/c)
+        }
+        function A_internal(current,rise) {
+            k = 0.024
+            b = 0.44
+            c = 0.725
+            return Math.pow((current/(k*Math.pow(rise,b))),1/c)
+        }
+    }
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+ 
+document.addEventListener("DOMContentLoaded", function(){
+    var calcInputs = document.querySelectorAll('.calculator input');
+    for (var i = 0; i < calcInputs.length; i++) {
+        calcInputs[i].addEventListener("keypress", function(e) {
+            if (e.charCode >= 48 && e.charCode <= 57 || (e.charCode == 9 || e.charCode == 8 || e.charCode == 0 || e.charCode == 13 || e.charCode == 46 || e.charCode == 45)) {
+                return;   
+            } else {
+                e.preventDefault();
+            }
+        });
+    };
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+		            jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+		            setTimeout(function(){$("li.conversion").addClass('active'); $('li.conversion li:eq(13)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html class="no-js" lang="ko-kr">
+    
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="keywords" content="섭씨 화씨 변환 계산기" />
+<meta name="description" content="온도 계산기는 섭씨 값을 화씨 값으로, 화씨 값을 섭씨 값으로 변환합니다." />
+
+<link rel="icon" type="image/x-icon" href="../favicon.ico">
+<link href="../css/bootstrap.united.min.css" rel="stylesheet">
+<link href="../css/site.css" rel="stylesheet">
+<link href="../css/font-awesome.min.css" rel="stylesheet">
+
+<title>섭씨 화씨 변환 계산기</title>
+<style type="text/css">
+.rte-crumbs {
+    padding:0 !important;
+}
+.calculator-description h2 {
+    display: none;
+}
+.calculator-input {
+    position: relative;
+    display: inline-block;
+    width: 250px;
+}
+.input-label,
+.input-answer,
+.input-dropdown {
+    position: absolute;
+    right: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
+    font-weight:bold;
+}
+.rtl .input-label,
+.rtl .input-answer,
+.rtl .input-dropdown {
+    position: absolute;
+    right: unset;
+    left: 0;
+    background-color: #efefef;
+    border: solid 1px #999;
+    height: 32px;
+    padding: 8px 8px 2px 8px;
+    box-sizing: border-box;
+    border-radius: 4px 0 0 4px;
+    font-weight:bold;
+}
+.input-dropdown {
+    padding:5px;
+}
+.input-answer {
+    left: 0;
+    right:auto;
+    border-radius: 4px 0 0 4px;
+    width:25px;
+}
+    .rtl .input-answer {
+        left: auto;
+        right:0;
+        border-radius: 0 4px 4px 0;
+    }
+.calculator input {
+  border-radius:4px;
+  border:solid 1px #999;
+  padding: 0px 5px 0px 5px;
+  max-width:100%;
+  width:100%;
+  box-shadow: none;
+  margin-bottom: 10px;
+  box-sizing:border-box;
+  height:32px;
+}
+input.answer {
+    background-color:#F8F8F8 
+}
+.calculator .input-answer ~ input.answer {
+    padding-left: 30px;
+}
+.rtl .calculator .input-answer ~ input.answer {
+    padding-left:5px;
+    padding-right:30px;
+}
+span.input-headline {
+  font-weight:bold;
+  display:block;
+  text-align: left;
+  margin:0 0 5px 0;
+}
+  .rtl span.input-headline {
+    text-align: right;
+  }
+.related-products {
+    display: table;
+    table-layout: fixed;
+    width:100%;
+}
+.related-products div {
+    display: table-cell;
+    text-align: center;
+}
+.related-products div a img {
+    border: 1px solid #a9a9a9;
+    height:64px;
+    width:64px;
+}
+#language-toggle {
+    padding:25px 0 0 0;
+}
+.calculator {
+display: flex;
+flex-wrap: wrap;
+}
+.temperature{ margin-right: 20px; }
+.rtl .temperature {margin-left: 20px; margin-right: 0px;}
+
+@media screen and (max-width: 600px) {
+    .calculator-input {
+        /*width:calc(100% - 10px);*/
+        width:100%;
+    }
+    .calculator input {
+        max-width:100%;
+    }
+    .calculator-wrapper {
+        display:flex;
+        flex-direction:column-reverse;
+    }
+    .calculator-description h2 {
+        display: block;
+    }
+    .related-products {
+        display: block;
+        width:100%;
+    }
+    .related-products div {
+        display: block;
+        text-align: left;
+        clear:both;
+    }
+        .rtl .related-products div {
+            text-align: right;
+        }
+    .related-products div br {
+        display: none;
+    }
+    .related-products div a img {
+        float: left;
+        margin-right:10px;
+        height:32px;
+        width:32px;
+        margin-bottom:10px;
+    }
+        .rtl .related-products div a img {
+            float: right;
+            margin-right:0;
+            margin-left:10px;
+        }
+.calculator {
+display: block;
+}
+.temperature{ margin-right: 0px; }
+.rtl .temperature {margin-left: 0px; margin-right: 0px;}
+}
+}  
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+</style>
+<link rel="stylesheet" type="text/css" href="../css/fonts.css" />
+<link rel="stylesheet" type="text/css" href="../css/globala17d.css" />
+
+</head>
+<body itemscope itemtype="http://schema.org/WebPage" class="ltr">
+    <div class="wrap">
+        <div class="nav-wrap" id="siteNavigation"></div>
+        <div class="container">
+            <div class="site-index">
+                <div class="body-content">
+
+<h1 class="headline-border">섭씨 화씨 변환 계산기</h1>
+
+<div class="calculator-wrapper">
+    <div class="calculator-description">
+        <h2 class="headline-border">정보:</h2>
+        <p><strong>섭씨 온도 눈금</strong></p>
+<p>섭씨 눈금은 비율 시스템이 아니라 간격 시스템이며 절대 눈금이 아닌 상대 눈금을 따릅니다. 즉, 20°C와 30°C 사이의 온도 간격은 30°C와 40°C 사이의 온도 간격과 같지만 40°C의 공기 열 에너지가 20°C의 공기 열 에너지의 2배는 아닙니다.</p>
+<p>1°C의 온도 차이는 1.8°F의 온도 차이에 해당합니다.</p>
+<p><strong>화씨 온도 눈금</strong></p>
+<p>화씨는 물의 어는점을 32°F, 끓는점을 212°F(표준 대기압 기준)로 지정한 열역학적 온도 눈금입니다. 이 경우 물의 끓는점과 어는점의 차이가 정확하게 180°가 됩니다. 그러므로 화씨 눈금의 도수는 물의 어는점과 끓는점 사이 간격의 1/180입니다. 절대 온도는 -459.67°F로 정의됩니다.</p>
+<p>1°F의 온도 차이는 0.556°C의 온도 차이에 해당합니다.</p><p>
+    </div>
+
+
+<div class="calculator">
+<div class="temperature">
+        <div class="cel">
+            <span class="input-headline">섭씨:</span>
+            <div class="calculator-input">
+                <span class="input-label">°C</span>
+                <input placeholder="섭씨 입력..." name="cel" id="cel" type="number">
+            </div>
+        </div>
+        <div class="far">
+            <span class="input-headline">화씨:</span>
+            <div class="calculator-input">
+                <span class="input-label">°F</span>
+                <input placeholder="화씨 입력..." name="far" id="far" type="number">
+            </div>
+        </div>
+        <div class="kel">
+            <span class="input-headline">켈빈:</span>
+            <div class="calculator-input">
+                <span class="input-label">K</span>
+                <input placeholder="켈빈 입력..." name="kel" id="kel" type="number">
+            </div>
+        </div>
+        <div class="ran">
+            <span class="input-headline">랭킨:</span>
+            <div class="calculator-input">
+                <span class="input-label">°Ra</span>
+                <input placeholder=" 랭킨 입력..." name="ran" id="ran" type="number">
+            </div>
+        </div></div>
+<div class="temperature">
+        <div class="del">
+            <span class="input-headline">들릴:</span>
+            <div class="calculator-input">
+                <span class="input-label">°De</span>
+                <input placeholder="들릴 입력..." name="del" id="del" type="number">
+            </div>
+        </div>
+        <div class="new">
+            <span class="input-headline">뉴턴:</span>
+            <div class="calculator-input">
+                <span class="input-label">°N</span>
+                <input placeholder="뉴턴 입력..." name="new" id="new" type="number">
+            </div>
+        </div>
+        <div class="rea">
+            <span class="input-headline">레오뮈르:</span>
+            <div class="calculator-input">
+                <span class="input-label">°R</span>
+                <input placeholder="레오뮈르 입력..." name="rea" id="rea" type="number">
+            </div>
+        </div>
+        <div class="rom">
+            <span class="input-headline">뢰메르:</span>
+            <div class="calculator-input">
+                <span class="input-label">°Rø</span>
+                <input placeholder="뢰메르 입력..." name="rom" id="rom" type="number">
+            </div>
+        </div></div>
+</div>
+</div>
+<div class="clear"></div>
+
+<script type="text/javascript"  src="../js/jquery1101mine6f2.js"></script>
+<script type="text/javascript">
+var celInput = document.getElementById("cel");
+var farInput = document.getElementById("far");
+var kelInput = document.getElementById("kel");
+var ranInput = document.getElementById("ran");
+var delInput = document.getElementById("del");
+var newInput = document.getElementById("new");
+var reaInput = document.getElementById("rea");
+var romInput = document.getElementById("rom");
+
+function celConv() {
+	var celI = document.getElementById("cel").value;
+	document.getElementById("far").value = parseFloat(((celI * 1.8) + 32).toFixed(10));
+	document.getElementById("kel").value = parseFloat((+celI + +273.15).toFixed(10));
+    document.getElementById("ran").value = parseFloat(((+celI + +273.15) * 1.8).toFixed(10));
+    document.getElementById("del").value = parseFloat(((100 - celI) * 1.5).toFixed(10));
+	document.getElementById("new").value = parseFloat((celI * .33).toFixed(10));
+	document.getElementById("rea").value = parseFloat((celI * .8).toFixed(10));
+	document.getElementById("rom").value = parseFloat(((celI * .525) + 7.5).toFixed(10));
+}
+function farConv() {
+	var farI = document.getElementById("far").value;
+	document.getElementById("cel").value = parseFloat(((farI - 32) / 1.8).toFixed(10));
+	document.getElementById("kel").value = parseFloat((((farI - 32) / 1.8) + 273.15).toFixed(10));
+    document.getElementById("ran").value = parseFloat(((farI - 32) + 491.67).toFixed(10));
+    document.getElementById("del").value = parseFloat(((212 - farI) * .83333).toFixed(10));
+	document.getElementById("new").value = parseFloat(((farI - 32) * .18333).toFixed(10));
+	document.getElementById("rea").value = parseFloat(((farI - 32) * .44444).toFixed(10));
+	document.getElementById("rom").value = parseFloat((((farI - 32) * .29167) + 7.5).toFixed(10));
+}
+function kelConv() {
+	var kelI = document.getElementById("kel").value;
+	document.getElementById("cel").value = parseFloat((kelI - 273.15).toFixed(10));
+	document.getElementById("far").value = parseFloat(((kelI * 1.8) - 459.67).toFixed(10));
+    document.getElementById("ran").value = parseFloat((kelI * 1.8).toFixed(10));
+	document.getElementById("del").value = parseFloat(((373.15 - kelI) * 1.5).toFixed(10));
+	document.getElementById("new").value = parseFloat(((kelI - 273.15) * .33).toFixed(10));
+	document.getElementById("rea").value = parseFloat(((kelI - 273.15) * .8).toFixed(10));
+    document.getElementById("rom").value = parseFloat((((kelI - 273.15) * .525) + 7.5).toFixed(10));
+}
+function ranConv() {
+	var ranI = document.getElementById("ran").value;
+	document.getElementById("cel").value = parseFloat(((ranI - 491.67) * 5/9).toFixed(10));
+	document.getElementById("far").value = parseFloat((ranI - 459.67).toFixed(10));
+    document.getElementById("kel").value = parseFloat((ranI * 5/9).toFixed(10));
+    document.getElementById("del").value = parseFloat(((671.67 - ranI) * 5/6).toFixed(10));
+	document.getElementById("new").value = parseFloat(((ranI - 491.67) * 11/60).toFixed(10));
+	document.getElementById("rea").value = parseFloat(((ranI - 491.67) * 4/9).toFixed(10));
+	document.getElementById("rom").value = parseFloat((((ranI - 491.67) * 7/24) + 7.5).toFixed(10));
+}
+function delConv() {
+	var delI = document.getElementById("del").value;
+	document.getElementById("cel").value = parseFloat((100 - (delI * 2/3)).toFixed(10));
+	document.getElementById("far").value = parseFloat((212 - (delI * 6/5)).toFixed(10));
+    document.getElementById("kel").value = parseFloat((373.15 - (delI * 2/3)).toFixed(10));
+    document.getElementById("ran").value = parseFloat((671.67 - (delI * 6/5)).toFixed(10));
+	document.getElementById("new").value = parseFloat((33 - (delI * 11/50)).toFixed(10));
+	document.getElementById("rea").value = parseFloat((80 - (delI * 8/15)).toFixed(10));
+	document.getElementById("rom").value = parseFloat((60 - (delI * 7/20)).toFixed(10));
+}
+function newConv() {
+	var newI = document.getElementById("new").value;
+	document.getElementById("cel").value = parseFloat((newI * 100/33).toFixed(10));
+	document.getElementById("far").value = parseFloat(((newI * 60/11) + 32).toFixed(10));
+    document.getElementById("kel").value = parseFloat(((newI * 100/33) + 273.15).toFixed(10));
+    document.getElementById("ran").value = parseFloat(((newI * 60/11) + 491.67).toFixed(10));
+	document.getElementById("del").value = parseFloat(((33 - newI) * 50/11).toFixed(10));
+	document.getElementById("rea").value = parseFloat((newI * 80/33).toFixed(10));
+	document.getElementById("rom").value = parseFloat(((newI * 35/22) + 7.5).toFixed(10));
+}
+function reaConv() {
+	var reaI = document.getElementById("rea").value;
+	document.getElementById("cel").value = parseFloat((reaI * 5/4).toFixed(10));
+	document.getElementById("far").value = parseFloat(((reaI * 9/4) + 32).toFixed(10));
+    document.getElementById("kel").value = parseFloat(((reaI * 5/4) + 273.15).toFixed(10));
+    document.getElementById("ran").value = parseFloat(((reaI * 9/4) + 491.67).toFixed(10));
+	document.getElementById("del").value = parseFloat(((80 - reaI) * 15/8).toFixed(10));
+	document.getElementById("new").value = parseFloat((reaI * 33/80).toFixed(10));
+	document.getElementById("rom").value = parseFloat(((reaI * 21/32) + 7.5).toFixed(10));
+}
+function romConv() {
+	var romI = document.getElementById("rom").value;
+	document.getElementById("cel").value = parseFloat(((romI - 7.5) * 40/21).toFixed(10));
+	document.getElementById("far").value = parseFloat((((romI - 7.5) * 24/7) + 32).toFixed(10));
+    document.getElementById("kel").value = parseFloat((((romI - 7.5) * 40/21) + 273.15).toFixed(10));
+    document.getElementById("ran").value = parseFloat((((romI - 7.5) * 24/7) + 491.67).toFixed(10));
+	document.getElementById("del").value = parseFloat(((60 - romI) * 20/7).toFixed(10));
+	document.getElementById("new").value = parseFloat(((romI - 7.5) * 22/35).toFixed(10));
+	document.getElementById("rea").value = parseFloat(((romI - 7.5) * 32/21).toFixed(10));
+}
+
+
+celInput.addEventListener ("keyup", celConv);
+farInput.addEventListener ("keyup", farConv);
+kelInput.addEventListener ("keyup", kelConv);
+ranInput.addEventListener ("keyup", ranConv);
+delInput.addEventListener ("keyup", delConv);
+newInput.addEventListener ("keyup", newConv);
+reaInput.addEventListener ("keyup", reaConv);
+romInput.addEventListener ("keyup", romConv);
+
+
+$(function() {
+    $('input[type=number]').on("wheel DOMMouseScroll mousewheel MozMousePixelScroll", function(event) {
+        event.preventDefault();
+        $this = $(this);
+    });
+});
+</script>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer gutter-lg-top">
+        <div class="container">
+            <a href="release-notes.html"><i class="fa fa-user-o gutter-sm-right"></i> Release Notes</a>
+	        <span class="pull-right"> | </span>
+            <a href="privacy-policy.html" class="pull-right gutter-md-left">Privacy Policy</a>
+            <span class="pull-right"> | </span>
+            <a href="https://github.com/ZalophusDokdo/ConversionCalculators" target="_blank" class="pull-right gutter-md-right"><i class="fa fa-github gutter-sm-right"></i>Github</a>
+        </div>
+    </footer>
+</div>
+
+        <script src="../js/jquery.js"></script>
+        <script src="../js/bootstrap.js"></script>
+        <script src="../js/jquery.bootstrap-autohidingnavbar.js"></script>
+        <script type="text/javascript">
+            $(function(){
+                jQuery('#siteNavigation').load('navigation.html', function(){
+		            jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
+		            setTimeout(function(){$("li.conversion").addClass('active'); $('li.conversion li:eq(18)').addClass('active');}, 100);
+                });
+            });
+            
+        </script>
+    </body>
+
+</html>

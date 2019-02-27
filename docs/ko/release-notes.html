@@ -5,9 +5,9 @@
 <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="icon" type="image/x-icon" href="../favicon.ico">
-        <title>About Us | Conversion Calculators</title>
-        <meta name="description" content="Conversion Calculators android application developer/author information">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <title>About Us | XYZ Controller</title>
+        <meta name="description" content="XYZ Controller android application developer/author information">
         <link href="../css/bootstrap.united.min.css" rel="stylesheet">
         <link href="../css/site.css" rel="stylesheet">
         <link href="../css/font-awesome.min.css" rel="stylesheet">
@@ -19,10 +19,26 @@
             <div class="container">
                 <div class="site-index">
                     <div class="body-content">
-                        <div class="jumbotron">
-                            <h2 class="text-center">About Us</h2>
-                            <h4 class="gutter-lg-top text-center text-info">online conversion calculators offer a one-stop resource for many electronics industry calculations. Whether you are identifying a 4 band resistor or trying to determine battery life, Use calculators as a quick and easy-to-use resource.</h4>
+                        <h2 class="text-center">Version 1.0</h2>
+                        <h4 class="gutter-lg-top text-center text-muted">application release notes</h4>
+                        
+                        <div class="gutter-lg-top">
+                            <h4>Bug Fixes:</h4>
+                            <ul>
+                                <li>...</li>
+                                <li>...</li>
+                            </ul>
                         </div>
+                        
+                        <div class="gutter-lg-top">
+                            <h4>New Features:</h4>
+                            <ul>
+                                <li>...</li>
+                                <li>...</li>
+                                <li>...</li>
+                            </ul>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
@@ -45,7 +61,7 @@
             $(function(){
                 jQuery('#siteNavigation').load('navigation.html', function(){
                     jQuery("nav.navbar-fixed-top").autoHidingNavbar({animationDuration: 250, showOnUpscroll: true, showOnBottom: false});
-                    setTimeout(function(){$("li.about-us").addClass('active');}, 100);
+                    setTimeout(function(){$("li.release-notes").addClass('active');}, 100);
                 });
             });
             
