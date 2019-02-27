@@ -4,15 +4,15 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="keywords" content="Capacitor Safety Discharge Calculator" />
-<meta name="description" content="Calculate capacitor discharge time with capacitor safety discharge calculator." />
+<meta name="keywords" content="커패시터 안전 방전 계산기" />
+<meta name="description" content="커패시터 안전 방전 계산기로 커패시터 방전 시간을 계산하십시오." />
 
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link href="../css/bootstrap.united.min.css" rel="stylesheet">
 <link href="../css/site.css" rel="stylesheet">
 <link href="../css/font-awesome.min.css" rel="stylesheet">
 
-<title>Capacitor Safety Discharge Conversion Calculator</title>
+<title>커패시터 안전 방전 계산기</title>
 <style type="text/css">
 .voltagewarningpadding {
 font-weight: bold;
@@ -229,48 +229,48 @@ input[type="number"] {
             <div class="site-index">
                 <div class="body-content">
 
-<h1 class="headline-border">Capacitor Safety Discharge Calculator</h1>
+<h1 class="headline-border">커패시터 안전 방전 계산기</h1>
 <div class="calculator-wrapper">
 <div class="calculator-description">
-<h2 class="headline-border">About:</h2>
-<p>This Capacitor Safety Discharge calculator helps to determine the discharge rate of a capacitor at known capacitance and charge. Many factors need to be considered when choosing a discharge resistor. Safety standards require the voltage across a capacitor to reach a safe voltage before a person is able to touch it.  In the USA, standards such as UL, OSHA, NTA, ETL, MET, etc. will have the requirements available for the needs of your product.</p>
-<div><img class="diagram" alt="Capacitor Discharge" src="../images/capacitor-discharge-diagram306d.png"></div>
+<h2 class="headline-border">정보:</h2>
+<p>이 커패시터 안전 방전 계산기는 알려진 커패시턴스 및 충전에서 커패시터의 방전 속도를 결정하는 데 도움을줍니다. 방전 저항을 선택할 때 많은 요인을 고려해야 합니다. 안전 표준은 사람이 접촉하기 전에 커패시터의 전압이 안전한 전압에 도달하도록 요구합니다. 미국의 경우 UL, OSHA, NTA, ETL, MET 등과 같은 표준은 귀사 제품의 요구 사항에 필요한 요구 사항을 갖습니다.</p>
+<div><img class="diagram" alt="커패시터 방전" src="../images/capacitor-discharge-diagram306d.png"></div>
 </div>
 <div class="calculator">
 <div class="cv">
-<span class="input-headline">Capacitor Value:</span>
+<span class="input-headline">커패시터 값:</span>
 <div class="calculator-input">
 <span class="input-label">&mu;F</span>
-<input placeholder="Enter Capacitor..." name="cv" id="cv" type="number">
+<input placeholder="E커패시터 입력..." name="cv" id="cv" type="number">
 </div>
 </div>
 <div class="icv">
-<span class="input-headline">Initial Charge Voltage:</span>
+<span class="input-headline">초기 충전 전압:</span>
 <div class="calculator-input">
 <span class="input-label">V</span>
-<input placeholder="Enter Voltage..." name="icv" id="icv" type="number">
+<input placeholder="전압 입력..." name="icv" id="icv" type="number">
 </div>
 </div>
 <div class="stv">
-<span class="input-headline">Safety Threshold Voltage:</span>
+<span class="input-headline">안전 임계 전압:</span>
 <div class="calculator-input">
 <span class="input-label" id="voltagewarninglabel">V</span>
-<input placeholder="Enter Voltage..." name="stv" id="stv" type="number">
+<input placeholder="전압 입력..." name="stv" id="stv" type="number">
 </div>
 </div>
 <div class="voltagewarning" id="voltagewarning"><span></span></div>
 <div>
-<h2 class="unit-title">Solve for Time</h2>
+<h2 class="unit-title">시간에 대한 해결</h2>
 </div>
 <div class="rv">
-<span class="input-headline">Resistance Value:</span>
+<span class="input-headline">저항 값:</span>
 <div class="calculator-input">
 <span class="input-label">&Omega;</span>
-<input placeholder="Enter Resistance..." name="rv" id="rv" type="number">
+<input placeholder="저항 입력..." name="rv" id="rv" type="number">
 </div>
 </div>
 <div class="esd">
-<span class="input-headline">Safe Voltage Achieved by:</span>
+<span class="input-headline">안전 전압 달성 기준:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">s</span>
@@ -278,7 +278,7 @@ input[type="number"] {
 </div>
 </div>
 <div class="eip">
-<span class="input-headline">Initial Power Across the Resistor:</span>
+<span class="input-headline">저항을 가로 지르는 초기 전력:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">W</span>
@@ -286,7 +286,7 @@ input[type="number"] {
 </div>
 </div>
 <div class="etc">
-<span class="input-headline">Time Constant:</span>
+<span class="input-headline">시간 상수:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">s</span>
@@ -294,23 +294,23 @@ input[type="number"] {
 </div>
 </div>
 <div class="eted">
-<span class="input-headline">Energy Discharged:</span>
+<span class="input-headline">방전 된 에너지:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">J</span>
 <input name="eted" id="eted" class="answer" type="number">
 </div>
 </div>
-<h2 class="unit-title">Solve for Resistance</h2>
+<h2 class="unit-title">저항에 대한 해결</h2>
 <div class="dt">
-<span class="input-headline">Desired Discharge Time:</span>
+<span class="input-headline">원하는 방전 시간:</span>
 <div class="calculator-input">
 <span class="input-label">s</span>
-<input placeholder="Enter Time..." name="dt" id="dt" type="number">
+<input placeholder="시간 입력..." name="dt" id="dt" type="number">
 </div>
 </div>
 <div class="osd">
-<span class="input-headline">Safe Voltage Achieved by:</span>
+<span class="input-headline">안전 전압 달성 기준:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">&Omega;</span>
@@ -318,7 +318,7 @@ input[type="number"] {
 </div>
 </div>
 <div class="oip">
-<span class="input-headline">Initial Power Across the Resistor:</span>
+<span class="input-headline">저항을 가로 지르는 초기 전력:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">W</span>
@@ -326,7 +326,7 @@ input[type="number"] {
 </div>
 </div>
 <div class="otc">
-<span class="input-headline">Time Constant:</span>
+<span class="input-headline">시간 상수:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">s</span>
@@ -334,7 +334,7 @@ input[type="number"] {
 </div>
 </div>
 <div class="oted">
-<span class="input-headline">Energy Discharged:</span>
+<span class="input-headline">방전된 에너지:</span>
 <div class="calculator-input">
 <span class="input-answer">=</span>
 <span class="input-label">J</span>
