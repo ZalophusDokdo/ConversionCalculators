@@ -61,21 +61,21 @@
     border-radius: 4px 0 0 4px;
     width:25px;
 }
-    .rtl .input-answer {
-        left: auto;
-        right:0;
-        border-radius: 0 4px 4px 0;
-    }
+.rtl .input-answer {
+    left: auto;
+    right:0;
+    border-radius: 0 4px 4px 0;
+}
 .calculator input {
-  border-radius:4px;
-  border:solid 1px #999;
-  padding: 0px 5px 0px 5px;
-  max-width:100%;
-  width:100%;
-  box-shadow: none;
-  margin-bottom: 10px;
-  box-sizing:border-box;
-  height:32px;
+    border-radius:4px;
+    border:solid 1px #999;
+    padding: 0px 5px 0px 5px;
+    max-width:100%;
+    width:100%;
+    box-shadow: none;
+    margin-bottom: 10px;
+    box-sizing:border-box;
+    height:32px;
 }
 input.answer {
     background-color:#F8F8F8 
@@ -88,14 +88,14 @@ input.answer {
     padding-right:30px;
 }
 span.input-headline {
-  font-weight:bold;
-  display:block;
-  text-align: left;
-  margin:0 0 5px 0;
+    font-weight:bold;
+    display:block;
+    text-align: left;
+    margin:0 0 5px 0;
 }
-  .rtl span.input-headline {
+.rtl span.input-headline {
     text-align: right;
-  }
+}
 .related-products {
     display: table;
     table-layout: fixed;
@@ -114,24 +114,24 @@ span.input-headline {
     padding:25px 0 0 0;
 }
 .diagram {
-max-width: 100%;
-float: right;
+    max-width: 100%;
+    float: right;
 }
 .rtl .diagram {
-max-width: 100%;
-float: left;
+    max-width: 100%;
+    float: left;
 }
 
 @media screen and (max-width: 1060px) {
-.diagram {
-max-width: 100%;
-float: right;
-width: 50%;
-}
-.rtl .diagram {
-max-width: 100%;
-float: none;
-}
+    .diagram {
+        max-width: 100%;
+        float: right;
+        width: 50%;
+    }
+    .rtl .diagram {
+        max-width: 100%;
+        float: none;
+    }
 }
 @media screen and (max-width: 600px) {
     .calculator-input {
@@ -157,9 +157,9 @@ float: none;
         text-align: left;
         clear:both;
     }
-        .rtl .related-products div {
-            text-align: right;
-        }
+    .rtl .related-products div {
+        text-align: right;
+    }
     .related-products div br {
         display: none;
     }
@@ -170,20 +170,20 @@ float: none;
         width:32px;
         margin-bottom:10px;
     }
-        .rtl .related-products div a img {
-            float: right;
-            margin-right:0;
-            margin-left:10px;
-        }
-.diagram {
-max-width: 100%;
-float: none;
-width: 100%;
-}
-.rtl .diagram {
-max-width: 100%;
-float: none;
-}
+    .rtl .related-products div a img {
+        float: right;
+        margin-right:0;
+        margin-left:10px;
+    }
+    .diagram {
+        max-width: 100%;
+        float: none;
+        width: 100%;
+    }
+    .rtl .diagram {
+    max-width: 100%;
+    float: none;
+    }
 }  
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -208,85 +208,85 @@ input[type="number"] {
 
 <h1 class="headline-border">Voltage Divider Calculator</h1>
 <div class="calculator-wrapper">
-<div class="calculator-description">
-<h2 class="headline-border">About:</h2>
-<p>A voltage divider is a passive linear circuit that produces an output voltage (V<sub>out</sub>) that is a fraction of its input voltage (V<sub>1</sub>). Voltage dividers are used to make signal level adjustments, for active device and amplifier bias, and for measuring voltages.</p>
-<p>Formula: V<sub>out</sub> = R<sub>2</sub> &divide; (R<sub>1</sub> + R<sub>2</sub>) &times; V<sub>1</sub></p>
-<img class="diagram" alt="Voltage Divider Diagram" src="../images/voltage-divider-diagram7778.png?ts=fc917814-b472-48e2-aba9-5761999f5ce5&amp;la=en-KR">
-</div>
-<div class="calculator">
-<div class="v1">
-<span class="input-headline">Voltage Input (V<sub>1</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">V</span>
-<input placeholder="Enter Voltage..." name="v1" id="v1" type="number">
-</div>
-</div>
-<div class="r1">
-<span class="input-headline">1st Resistance (R<sub>1</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">&Omega;</span>
-<input placeholder="Enter Resistor..." name="r1" id="r1" type="number">
-</div>
-</div>
-<div class="r2">
-<span class="input-headline">2nd Resistance (R<sub>2</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">&Omega;</span>
-<input placeholder="Enter Resistor..." name="r2" id="r2" type="number">
-</div>
-</div>
-<div class="vout">
-<span class="input-headline">Voltage Output (V<sub>out</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">V</span>
-<span class="input-answer">=</span>
-<input name="v2" id="v2" type="number" class="answer">
-</div>
-</div>
-<div>
-<p><strong>If Under Load</strong></p>
-</div>
-<div class="r3">
-<span class="input-headline">Load (R<sub>L</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">&Omega;</span>
-<input placeholder="Enter Load..." name="r3" id="r3" type="number">
-</div>
-</div>
-<div class="v3">
-<span class="input-headline">Output Circuit Voltage:</span>
-<div class="calculator-input">
-<span class="input-label">V</span>
-<span class="input-answer">=</span>
-<input name="v3" id="v3" type="number" class="answer">
-</div>
-</div>
-<div class="pt">
-<span class="input-headline">Power Supplied by the Power Supply:</span>
-<div class="calculator-input">
-<span class="input-label">W</span>
-<span class="input-answer">=</span>
-<input name="pt" id="pt" type="number" class="answer">
-</div>
-</div>
-<div class="pout">
-<span class="input-headline">Power Delivered to the Load Resistor (R<sub>L</sub>):</span>
-<div class="calculator-input">
-<span class="input-label">W</span>
-<span class="input-answer">=</span>
-<input name="po" id="po" type="number" class="answer">
-</div>
-</div>
-<div class="peff">
-<span class="input-headline">% of the Total Power the Load Receives:</span>
-<div class="calculator-input">
-<span class="input-label">%</span>
-<span class="input-answer">=</span>
-<input name="peff" id="peff" type="number" class="answer">
-</div>
-</div>
-</div>
+  <div class="calculator-description">
+    <h2 class="headline-border">About:</h2>
+      <p>A voltage divider is a passive linear circuit that produces an output voltage (V<sub>out</sub>) that is a fraction of its input voltage (V<sub>1</sub>). Voltage dividers are used to make signal level adjustments, for active device and amplifier bias, and for measuring voltages.</p>
+      <p>Formula: V<sub>out</sub> = R<sub>2</sub> &divide; (R<sub>1</sub> + R<sub>2</sub>) &times; V<sub>1</sub></p>
+      <img class="diagram" alt="Voltage Divider Diagram" src="../images/voltage-divider-diagram7778.png">
+  </div>
+  <div class="calculator">
+    <div class="v1">
+      <span class="input-headline">Voltage Input (V<sub>1</sub>):</span>
+      <div class="calculator-input">
+        <span class="input-label">V</span>
+        <input placeholder="Enter Voltage..." name="v1" id="v1" type="number">
+      </div>
+    </div>
+    <div class="r1">
+      <span class="input-headline">1st Resistance (R<sub>1</sub>):</span>
+      <div class="calculator-input">
+        <span class="input-label">&Omega;</span>
+        <input placeholder="Enter Resistor..." name="r1" id="r1" type="number">
+      </div>
+    </div>
+    <div class="r2">
+      <span class="input-headline">2nd Resistance (R<sub>2</sub>):</span>
+      <div class="calculator-input">
+        <span class="input-label">&Omega;</span>
+        <input placeholder="Enter Resistor..." name="r2" id="r2" type="number">
+      </div>
+    </div>
+    <div class="vout">
+      <span class="input-headline">Voltage Output (V<sub>out</sub>):</span>
+        <div class="calculator-input">
+          <span class="input-label">V</span>
+          <span class="input-answer">=</span>
+          <input name="v2" id="v2" type="number" class="answer">
+        </div>
+      </div>
+    <div>
+    <p><strong>If Under Load</strong></p>
+    </div>
+    <div class="r3">
+      <span class="input-headline">Load (R<sub>L</sub>):</span>
+      <div class="calculator-input">
+        <span class="input-label">&Omega;</span>
+        <input placeholder="Enter Load..." name="r3" id="r3" type="number">
+      </div>
+    </div>
+    <div class="v3">
+      <span class="input-headline">Output Circuit Voltage:</span>
+      <div class="calculator-input">
+        <span class="input-label">V</span>
+        <span class="input-answer">=</span>
+        <input name="v3" id="v3" type="number" class="answer">
+      </div>
+    </div>
+    <div class="pt">
+      <span class="input-headline">Power Supplied by the Power Supply:</span>
+      <div class="calculator-input">
+        <span class="input-label">W</span>
+        <span class="input-answer">=</span>
+        <input name="pt" id="pt" type="number" class="answer">
+      </div>
+    </div>
+    <div class="pout">
+      <span class="input-headline">Power Delivered to the Load Resistor (R<sub>L</sub>):</span>
+      <div class="calculator-input">
+        <span class="input-label">W</span>
+        <span class="input-answer">=</span>
+        <input name="po" id="po" type="number" class="answer">
+      </div>
+    </div>
+    <div class="peff">
+      <span class="input-headline">% of the Total Power the Load Receives:</span>
+      <div class="calculator-input">
+        <span class="input-label">%</span>
+        <span class="input-answer">=</span>
+        <input name="peff" id="peff" type="number" class="answer">
+      </div>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript">

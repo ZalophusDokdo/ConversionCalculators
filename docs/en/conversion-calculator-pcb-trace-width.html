@@ -118,9 +118,9 @@ span.input-headline {
     text-align: center;
 }
 @media screen and (max-width: 600px) {
-.unit-title {
-display: block;
-}
+    .unit-title {
+        display: block;
+    }
     .unit-title:before,
     .unit-title:after {
         background-color: #000;
@@ -172,9 +172,9 @@ display: block;
         text-align: left;
         clear:both;
     }
-        .rtl .related-products div {
-            text-align: right;
-        }
+    .rtl .related-products div {
+        text-align: right;
+    }
     .related-products div br {
         display: none;
     }
@@ -185,28 +185,29 @@ display: block;
         width:32px;
         margin-bottom:10px;
     }
-        .rtl .related-products div a img {
-            float: right;
-            margin-right:0;
-            margin-left:10px;
-        }
-}
-
-.calculator {
-  display: flex;
-  flex-wrap: wrap;
-}
-.pcbwidth {
-  margin-right:20px;
+    .rtl .related-products div a img {
+        float: right;
+        margin-right:0;
+        margin-left:10px;
+    }
+    .calculator {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .pcbwidth {
+        margin-right:20px;
+    }
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
 }
 
 @media screen and (max-width: 600px) {
-  .calculator {
-    display: block;
-  }
-  .pcbwidth {
-    margin-right:0;
-  }
+    .calculator {
+        display: block;
+    }
+    .pcbwidth {
+        margin-right:0;
+    }
 }
 
 input[type="number"]::-webkit-outer-spin-button,

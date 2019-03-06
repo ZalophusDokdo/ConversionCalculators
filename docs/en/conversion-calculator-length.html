@@ -213,8 +213,9 @@ display: block;
     .calculator {
         display: block;
     }
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
 }
-
 
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
@@ -237,98 +238,96 @@ input[type="number"] {
                 <div class="body-content">
 
 <h1 class="headline-border">Length Conversion Calculator</h1>
-
 <div class="calculator-wrapper">
-    <div class="calculator-description">
-        <h2 class="headline-border">About:</h2>
-        <p>Use this length measurement converter to convert meters to feet, centimeters to inches, millimeters to inches, and more including kilometers, meters, centimeters, millimeters, miles, yards, feet, and inches.</p>
+  <div class="calculator-description">
+     <h2 class="headline-border">About:</h2>
+     <p>Use this length measurement converter to convert meters to feet, centimeters to inches, millimeters to inches, and more including kilometers, meters, centimeters, millimeters, miles, yards, feet, and inches.</p>
+  </div>
+  <div class="calculator">
+    <div class="length">
+      <h2 class="unit-title">Metric</h2>
+      <div class="km">
+        <span class="input-headline">Kilometers:</span>
+        <div class="calculator-input">
+          <span class="input-label">km</span>
+          <input placeholder="Enter Kilometers..." name="km" id="km" type="number">
+        </div>
+      </div>
+      <div class="m">
+        <span class="input-headline">Meters:</span>
+        <div class="calculator-input">
+          <span class="input-label">m</span>
+          <input placeholder="Enter Meters..." name="m" id="m" type="number">
+        </div>
+      </div>
+      <div class="cm">
+        <span class="input-headline">Centimeters:</span>
+        <div class="calculator-input">
+          <span class="input-label">cm</span>
+          <input placeholder="Enter Centimeters..." name="cm" id="cm" type="number">
+        </div>
+      </div>
+      <div class="mm">
+        <span class="input-headline">Millimeters:</span>
+        <div class="calculator-input">
+          <span class="input-label">mm</span>
+          <input placeholder="Enter Millimeters..." name="mm" id="mm" type="number">
+        </div>
+      </div>
+      <div class="um">
+        <span class="input-headline">Micrometers:</span>
+        <div class="calculator-input">
+          <span class="input-label">µm</span>
+          <input placeholder="Enter Micrometers..." name="um" id="um" type="number">
+        </div>
+      </div>
+      <div class="nm">
+        <span class="input-headline">Nanometers:</span>
+        <div class="calculator-input">
+          <span class="input-label">nm</span>
+          <input placeholder="Enter Nanometers..." name="nm" id="nm" type="number">
+        </div>
+      </div>
+      </div>
+      <div class="length">
+      <h2 class="unit-title">Imperial</h2>
+      <div class="mi">
+        <span class="input-headline">Miles:</span>
+        <div class="calculator-input">
+          <span class="input-label">mi</span>
+          <input placeholder="Enter Miles..." name="mi" id="mi" type="number">
+        </div>
+      </div>
+      <div class="yd">
+        <span class="input-headline">Yards:</span>
+        <div class="calculator-input">
+          <span class="input-label">yd</span>
+          <input placeholder="Enter Yards..." name="yd" id="yd" type="number">
+        </div>
+      </div>
+      <div class="ft">
+        <span class="input-headline">Feet:</span>
+        <div class="calculator-input">
+          <span class="input-label">ft</span>
+          <input placeholder="Enter Feet..." name="ft" id="ft" type="number">
+        </div>
+      </div>
+      <div class="in">
+        <span class="input-headline">Inches:</span>
+        <div class="calculator-input">
+          <span class="input-label">in</span>
+          <input placeholder="Enter Inches..." name="in" id="in" type="number">
+        </div>
+      </div>
+      <div class="nmi">
+        <span class="input-headline">Nautical Miles:</span>
+        <div class="calculator-input">
+            <span class="input-label">nmi</span>
+            <input placeholder="Enter Nautical Miles..." name="nmi" id="nmi" type="number">
+        </div>
+      </div>
     </div>
-
-<div class="calculator">
-<div class="length">
-<h2 class="unit-title">Metric</h2>
-        <div class="km">
-            <span class="input-headline">Kilometers:</span>
-            <div class="calculator-input">
-                <span class="input-label">km</span>
-                <input placeholder="Enter Kilometers..." name="km" id="km" type="number">
-            </div>
-        </div>
-        <div class="m">
-            <span class="input-headline">Meters:</span>
-            <div class="calculator-input">
-                <span class="input-label">m</span>
-                <input placeholder="Enter Meters..." name="m" id="m" type="number">
-            </div>
-        </div>
-        <div class="cm">
-            <span class="input-headline">Centimeters:</span>
-            <div class="calculator-input">
-                <span class="input-label">cm</span>
-                <input placeholder="Enter Centimeters..." name="cm" id="cm" type="number">
-            </div>
-        </div>
-        <div class="mm">
-            <span class="input-headline">Millimeters:</span>
-            <div class="calculator-input">
-                <span class="input-label">mm</span>
-                <input placeholder="Enter Millimeters..." name="mm" id="mm" type="number">
-            </div>
-        </div>
-        <div class="um">
-            <span class="input-headline">Micrometers:</span>
-            <div class="calculator-input">
-                <span class="input-label">µm</span>
-                <input placeholder="Enter Micrometers..." name="um" id="um" type="number">
-            </div>
-        </div>
-        <div class="nm">
-            <span class="input-headline">Nanometers:</span>
-            <div class="calculator-input">
-                <span class="input-label">nm</span>
-                <input placeholder="Enter Nanometers..." name="nm" id="nm" type="number">
-            </div>
-        </div>
-        </div>
-        <div class="length">
-        <h2 class="unit-title">Imperial</h2>
-        <div class="mi">
-            <span class="input-headline">Miles:</span>
-            <div class="calculator-input">
-                <span class="input-label">mi</span>
-                <input placeholder="Enter Miles..." name="mi" id="mi" type="number">
-            </div>
-        </div>
-        <div class="yd">
-            <span class="input-headline">Yards:</span>
-            <div class="calculator-input">
-                <span class="input-label">yd</span>
-                <input placeholder="Enter Yards..." name="yd" id="yd" type="number">
-            </div>
-        </div>
-        <div class="ft">
-            <span class="input-headline">Feet:</span>
-            <div class="calculator-input">
-                <span class="input-label">ft</span>
-                <input placeholder="Enter Feet..." name="ft" id="ft" type="number">
-            </div>
-        </div>
-        <div class="in">
-            <span class="input-headline">Inches:</span>
-            <div class="calculator-input">
-                <span class="input-label">in</span>
-                <input placeholder="Enter Inches..." name="in" id="in" type="number">
-            </div>
-        </div>
-        <div class="nmi">
-            <span class="input-headline">Nautical Miles:</span>
-            <div class="calculator-input">
-                <span class="input-label">nmi</span>
-                <input placeholder="Enter Nautical Miles..." name="nmi" id="nmi" type="number">
-            </div>
-        </div>
-        </div>
-</div>
+  </div>
 </div>
 
 <script type="text/javascript">

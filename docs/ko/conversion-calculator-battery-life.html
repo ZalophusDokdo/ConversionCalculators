@@ -215,7 +215,9 @@ margin-left: 0px;
             float: right;
             margin-right:0;
             margin-left:10px;
-        }
+    }
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
 }  
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -305,9 +307,10 @@ input[type="number"] {
                 </div>
             </div>
         </div>
+		<div class="clear"></div>
+	    <img class="diagram" alt="Battery Life Diagram" src="../images/battery-life-diagram.png">
     </div>
 </div>
-<div class="clear"></div>
 
 <script type="text/javascript"  src="../js/jquery1101mine6f2.js"></script>
 <script type="text/javascript">

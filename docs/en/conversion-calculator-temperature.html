@@ -61,21 +61,21 @@
     border-radius: 4px 0 0 4px;
     width:25px;
 }
-    .rtl .input-answer {
-        left: auto;
-        right:0;
-        border-radius: 0 4px 4px 0;
-    }
+.rtl .input-answer {
+    left: auto;
+    right:0;
+    border-radius: 0 4px 4px 0;
+}
 .calculator input {
-  border-radius:4px;
-  border:solid 1px #999;
-  padding: 0px 5px 0px 5px;
-  max-width:100%;
-  width:100%;
-  box-shadow: none;
-  margin-bottom: 10px;
-  box-sizing:border-box;
-  height:32px;
+    border-radius:4px;
+    border:solid 1px #999;
+    padding: 0px 5px 0px 5px;
+    max-width:100%;
+    width:100%;
+    box-shadow: none;
+    margin-bottom: 10px;
+    box-sizing:border-box;
+    height:32px;
 }
 input.answer {
     background-color:#F8F8F8 
@@ -88,14 +88,14 @@ input.answer {
     padding-right:30px;
 }
 span.input-headline {
-  font-weight:bold;
-  display:block;
-  text-align: left;
-  margin:0 0 5px 0;
+    font-weight:bold;
+    display:block;
+    text-align: left;
+    margin:0 0 5px 0;
 }
-  .rtl span.input-headline {
+.rtl span.input-headline {
     text-align: right;
-  }
+}
 .related-products {
     display: table;
     table-layout: fixed;
@@ -114,8 +114,8 @@ span.input-headline {
     padding:25px 0 0 0;
 }
 .calculator {
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 .temperature{ margin-right: 20px; }
 .rtl .temperature {margin-left: 20px; margin-right: 0px;}
@@ -144,9 +144,9 @@ flex-wrap: wrap;
         text-align: left;
         clear:both;
     }
-        .rtl .related-products div {
-            text-align: right;
-        }
+    .rtl .related-products div {
+        text-align: right;
+    }
     .related-products div br {
         display: none;
     }
@@ -157,17 +157,18 @@ flex-wrap: wrap;
         width:32px;
         margin-bottom:10px;
     }
-        .rtl .related-products div a img {
-            float: right;
-            margin-right:0;
-            margin-left:10px;
-        }
-.calculator {
-display: block;
-}
-.temperature{ margin-right: 0px; }
-.rtl .temperature {margin-left: 0px; margin-right: 0px;}
-}
+    .rtl .related-products div a img {
+        float: right;
+        margin-right:0;
+        margin-left:10px;
+    }
+    .calculator {
+        display: block;
+    }
+    .temperature { margin-right: 0px; }
+    .rtl .temperature {margin-left: 0px; margin-right: 0px;}
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
 }
 
 input[type="number"]::-webkit-outer-spin-button,
@@ -262,10 +263,12 @@ input[type="number"] {
                 <span class="input-label">°Rø</span>
                 <input placeholder="Enter Rømer..." name="rom" id="rom" type="number">
             </div>
-        </div></div>
+        </div>
+    </div>
+	<div class="clear"></div>
+    <img class="diagram" alt="Temperature Diagram" src="../images/temperature-diagram.png">
+  </div>
 </div>
-</div>
-<div class="clear"></div>
         
 <script type="text/javascript">var celInput = document.getElementById("cel");
 var farInput = document.getElementById("far");

@@ -144,9 +144,9 @@ flex-wrap: wrap;
         text-align: left;
         clear:both;
     }
-        .rtl .related-products div {
-            text-align: right;
-        }
+    .rtl .related-products div {
+        text-align: right;
+    }
     .related-products div br {
         display: none;
     }
@@ -157,17 +157,18 @@ flex-wrap: wrap;
         width:32px;
         margin-bottom:10px;
     }
-        .rtl .related-products div a img {
-            float: right;
-            margin-right:0;
-            margin-left:10px;
-        }
-.calculator {
-display: block;
-}
-.temperature{ margin-right: 0px; }
-.rtl .temperature {margin-left: 0px; margin-right: 0px;}
-}
+    .rtl .related-products div a img {
+        float: right;
+        margin-right:0;
+        margin-left:10px;
+    }
+    .calculator {
+        display: block;
+    }
+    .temperature{ margin-right: 0px; }
+    .rtl .temperature {margin-left: 0px; margin-right: 0px;}
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
 }  
 
 
@@ -263,10 +264,12 @@ input[type="number"] {
                 <span class="input-label">°Rø</span>
                 <input placeholder="뢰메르 입력..." name="rom" id="rom" type="number">
             </div>
-        </div></div>
+        </div>
+    </div>
+	<div class="clear"></div>
+    <img class="diagram" alt="Temperature Diagram" src="../images/temperature-diagram.png">
+  </div>
 </div>
-</div>
-<div class="clear"></div>
 
 <script type="text/javascript"  src="../js/jquery1101mine6f2.js"></script>
 <script type="text/javascript">

@@ -65,7 +65,7 @@
         left: auto;
         right:0;
         border-radius: 0 4px 4px 0;
-    }
+}
 .calculator input {
   border-radius:4px;
   border:solid 1px #999;
@@ -88,14 +88,14 @@ input.answer {
     padding-right:30px;
 }
 span.input-headline {
-  font-weight:bold;
-  display:block;
-  text-align: left;
-  margin:0 0 5px 0;
+    font-weight:bold;
+    display:block;
+    text-align: left;
+    margin:0 0 5px 0;
 }
-  .rtl span.input-headline {
+.rtl span.input-headline {
     text-align: right;
-  }
+}
 .related-products {
     display: table;
     table-layout: fixed;
@@ -114,15 +114,15 @@ span.input-headline {
     padding:25px 0 0 0;
 }
 .calculator {
-display: flex;
-flex-wrap: wrap;
+    display: flex;
+    flex-wrap: wrap;
 }
 .battery {
-margin-right: 40px;
+    margin-right: 40px;
 }
 .rtl .battery {
-margin-left: 40px;
-margin-right: 0px;
+    margin-left: 40px;
+    margin-right: 0px;
 }
 .unit-title {
     overflow: hidden;
@@ -134,19 +134,19 @@ margin-right: 0px;
 }
 
 @media screen and (max-width: 600px) {
-.unit-title {
-display: block;
-text-align: center;
-}
+    .unit-title {
+        display: block;
+        text-align: center;
+    }
     .unit-title:before,
     .unit-title:after {
         background-color: #000;
         content: "";
         display: inline-block;
-        height: 1px;
-        position: relative;
-        vertical-align: middle;
-        width: 50%;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
     }
     .rtl .unit-title:before,
     .rtl .unit-title:after {
@@ -156,7 +156,7 @@ text-align: center;
         height: 0px;
         position: relative;
         vertical-align: middle;
-        width: 50%;
+    width: 50%;
     }
     .unit-title:before {
         right: 0.5em;
@@ -166,15 +166,15 @@ text-align: center;
         left: 0.5em;
         margin-right: -50%;
     }
-.calculator {
-display: block;
-}
-.battery {
-margin-right: 0px;
-}
-.rtl .battery {
-margin-left: 0px;
-}
+    .calculator {
+        display: block;
+    }
+    .battery {
+        margin-right: 0px;
+    }
+    .rtl .battery {
+        margin-left: 0px;
+    }
     .calculator-input {
         /*width:calc(100% - 10px);*/
         width:100%;
@@ -198,11 +198,11 @@ margin-left: 0px;
         text-align: left;
         clear:both;
     }
-        .rtl .related-products div {
-            text-align: right;
-        }
+    .rtl .related-products div {
+        text-align: right;
+    }
     .related-products div br {
-        display: none;
+    display: none;
     }
     .related-products div a img {
         float: left;
@@ -211,17 +211,19 @@ margin-left: 0px;
         width:32px;
         margin-bottom:10px;
     }
-        .rtl .related-products div a img {
-            float: right;
-            margin-right:0;
-            margin-left:10px;
-        }
-}  
-
+    .rtl .related-products div a img {
+    float: right;
+    margin-right:0;
+    margin-left:10px;
+    }
+    .diagram { max-width: 100%; float: none; width: 100%; }
+    .rtl .diagram { max-width: 100%; float: none; }
+}
+    
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+        -webkit-appearance: none;
+        margin: 0;
 }
 input[type="number"] {
     -moz-appearance: textfield;
@@ -240,69 +242,71 @@ input[type="number"] {
 
 <h1 class="headline-border">Battery Life Calculator</h1>
 <div class="calculator-wrapper">
-<div class="calculator-description">
-<h2 class="headline-border">About:</h2>
-<p>Generally, battery life is calculated based on the current rating in Milliampere (mA) and the capacity of the battery in Milliampere Hours (mAh). Ampere is an electrical unit used to measure the current flow towards the load. The battery life or capacity can be calculated from the input current rating of the battery and the load current of the circuit. Battery life will be high when the load current is low and vice versa. The capacity of the battery can be mathematically derived from the following formula:</p>
-<p>Battery Life = Battery Capacity in mAh / Load Current in mA * 0.70</p>
-<p>*The factor of 0.7 makes allowances for external factors which can affect battery life.</p>
-<p>Runtime = (10 * Ampere Hours) / Load in Watts</p>
-</div>
-<div class="calculator">
-<div class="battery">
-<h2 class="unit-title">Battery Life</h2>
-<div class="batteryCapacity">
-<span class="input-headline">Battery Capacity:</span>
-<div class="calculator-input">
-<span class="input-label">mAh</span>
-<input placeholder="Enter Capacity..." name="batcap" id="batcap" type="number">
-</div>
-</div>
-<div class="deviceConsumption">
-<span class="input-headline">Device Consumption:</span>
-<div class="calculator-input">
-<span class="input-label">mA</span>
-<input placeholder="Enter Consumption..." name="devcon" id="devcon" type="number">
-</div>
-</div>
-<div class="consumptionRate">
-<span class="input-headline">Consumption Rate:</span>
-<div class="calculator-input">
-<input placeholder="Enter Consumption Rate..." name="consrate" id="consrate" value="0.7" type="number">
-</div>
-</div>
-<div class="estimatedHours">
-<span class="input-headline">Estimated Hours:</span>
-<div class="calculator-input">
-<span class="input-answer">=</span>
-<input placeholder="(Cap. / Cons.) * Rate" name="esthr" id="esthr" type="number" class="answer">
-</div>
-</div>
-</div>
-<div class="battery">
-<h2 class="unit-title">Calculating Runtime</h2>
-<div class="ampHours">
-<span class="input-headline">Ampere Hours:</span>
-<div class="calculator-input">
-<span class="input-label">Ah</span>
-<input placeholder="Enter Ampere Hours..." name="amp" id="amp" type="number">
-</div>
-</div>
-<div class="loadWatts">
-<span class="input-headline">Load in Watts:</span>
-<div class="calculator-input">
-<span class="input-label">W</span>
-<input placeholder="Enter Load in Watts..." name="load" id="load" type="number">
-</div>
-</div>
-<div class="runtime">
-<span class="input-headline">Runtime:</span>
-<div class="calculator-input">
-<span class="input-answer">=</span>
-<input placeholder="(10 * Ah) / W" name="run" id="run" type="number" class="answer">
-</div>
-</div>
-</div>
-</div>
+  <div class="calculator-description">
+    <h2 class="headline-border">About:</h2>
+    <p>Generally, battery life is calculated based on the current rating in Milliampere (mA) and the capacity of the battery in Milliampere Hours (mAh). Ampere is an electrical unit used to measure the current flow towards the load. The battery life or capacity can be calculated from the input current rating of the battery and the load current of the circuit. Battery life will be high when the load current is low and vice versa. The capacity of the battery can be mathematically derived from the following formula:</p>
+    <p>Battery Life = Battery Capacity in mAh / Load Current in mA * 0.70</p>
+    <p>*The factor of 0.7 makes allowances for external factors which can affect battery life.</p>
+    <p>Runtime = (10 * Ampere Hours) / Load in Watts</p>
+  </div>
+  <div class="calculator">
+    <div class="battery">
+      <h2 class="unit-title">Battery Life</h2>
+      <div class="batteryCapacity">
+        <span class="input-headline">Battery Capacity:</span>
+        <div class="calculator-input">
+          <span class="input-label">mAh</span>
+          <input placeholder="Enter Capacity..." name="batcap" id="batcap" type="number">
+        </div>
+      </div>
+      <div class="deviceConsumption">
+        <span class="input-headline">Device Consumption:</span>
+        <div class="calculator-input">
+          <span class="input-label">mA</span>
+          <input placeholder="Enter Consumption..." name="devcon" id="devcon" type="number">
+        </div>
+      </div>
+      <div class="consumptionRate">
+        <span class="input-headline">Consumption Rate:</span>
+        <div class="calculator-input">
+          <input placeholder="Enter Consumption Rate..." name="consrate" id="consrate" value="0.7" type="number">
+        </div>
+      </div>
+      <div class="estimatedHours">
+        <span class="input-headline">Estimated Hours:</span>
+        <div class="calculator-input">
+          <span class="input-answer">=</span>
+          <input placeholder="(Cap. / Cons.) * Rate" name="esthr" id="esthr" type="number" class="answer">
+        </div>
+      </div>
+    </div>
+    <div class="battery">
+      <h2 class="unit-title">Calculating Runtime</h2>
+      <div class="ampHours">
+        <span class="input-headline">Ampere Hours:</span>
+        <div class="calculator-input">
+          <span class="input-label">Ah</span>
+          <input placeholder="Enter Ampere Hours..." name="amp" id="amp" type="number">
+        </div>
+      </div>
+      <div class="loadWatts">
+        <span class="input-headline">Load in Watts:</span>
+        <div class="calculator-input">
+          <span class="input-label">W</span>
+          <input placeholder="Enter Load in Watts..." name="load" id="load" type="number">
+        </div>
+      </div>
+      <div class="runtime">
+        <span class="input-headline">Runtime:</span>
+        <div class="calculator-input">
+          <span class="input-answer">=</span>
+          <input placeholder="(10 * Ah) / W" name="run" id="run" type="number" class="answer">
+        </div>
+      </div>
+    </div>
+	<div class="clear"></div>
+    <img class="diagram" alt="Battery Life Diagram" src="../images/battery-life-diagram.png">
+  </div>
 </div>
         
 <script type="text/javascript">
